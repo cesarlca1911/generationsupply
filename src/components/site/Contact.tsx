@@ -50,11 +50,11 @@ export const Contact = () => {
         .insert([payload]);
       if (insertError) throw insertError;
 
-      // Fire-and-forget email notification
+      // Best-effort email notification (no-op if function not deployed yet)
       supabase.functions
-        .invoke("send-contact-email", { body: parsed.data })
+        .invoke("send-contact-email", { body: payload })
         .catch(() => {
-          /* email is best-effort; submission already saved */
+          /* submission already saved to database */
         });
 
       setDone(true);
