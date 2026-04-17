@@ -41,7 +41,7 @@ export const Contact = () => {
     try {
       const { error: insertError } = await supabase
         .from("contact_submissions")
-        .insert(parsed.data);
+        .insert([parsed.data]);
       if (insertError) throw insertError;
 
       // Fire-and-forget email notification
