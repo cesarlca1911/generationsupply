@@ -22,11 +22,10 @@ export const Hero = () => {
             <span>Student-led · Fairfax County, VA</span>
           </div>
 
-          <h1 className="mt-6 font-display font-black text-5xl md:text-7xl leading-[0.95] text-balance">
-            Equipping the
-            <span className="block">
-              <span className="bg-accent-gradient bg-clip-text text-transparent">Next Generation.</span>
-            </span>
+          <h1 className="mt-6 font-display font-black text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-balance">
+            Equipping the{" "}
+            <span className="bg-accent-gradient bg-clip-text text-transparent">Next Generation</span>{" "}
+            and Beyond.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-primary-foreground/80 text-balance">
