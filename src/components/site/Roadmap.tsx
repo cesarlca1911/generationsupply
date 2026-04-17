@@ -26,7 +26,7 @@ const stops = [
   {
     status: "Pitching",
     icon: Rocket,
-    school: "Skyview Elementary",
+    school: "Skyview High School",
     detail: "Early conversations underway to bring a Generation Supply chapter to Skyview.",
     accent: "pitch",
   },
