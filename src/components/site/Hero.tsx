@@ -62,13 +62,12 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-5 flex justify-center"
         >
-          <div className="relative">
-            <div className="relative animate-float">
-              <div className="absolute inset-0 rounded-full bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20" />
+          <div className="relative animate-float">
+            <div className="relative h-72 w-72 md:h-96 md:w-96 rounded-full bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20 flex items-center justify-center overflow-hidden">
               <img
                 src={logo}
                 alt="Generation Supply circular emblem"
-                className="relative h-72 w-72 md:h-96 md:w-96 object-contain p-6"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
