@@ -7,7 +7,6 @@ export const Hero = () => {
   return (
     <section id="top" className="relative overflow-hidden bg-hero text-primary-foreground pt-32 pb-24 md:pt-44 md:pb-36 grain">
       {/* Decorative accents */}
-      <div className="absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-3xl" aria-hidden />
       <div className="absolute -bottom-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-primary-foreground/5 blur-3xl" aria-hidden />
 
       <div className="container relative grid md:grid-cols-12 gap-12 items-center">
@@ -64,7 +63,6 @@ export const Hero = () => {
           className="md:col-span-5 flex justify-center"
         >
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-accent/30 blur-3xl scale-110" aria-hidden />
             <div className="relative animate-float">
               <div className="absolute inset-0 rounded-full bg-primary-foreground/10 backdrop-blur-xl border border-primary-foreground/20" />
               <img
