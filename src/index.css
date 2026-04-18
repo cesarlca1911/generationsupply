@@ -88,8 +88,8 @@
 
 @layer utilities {
   .bg-hero { background: var(--gradient-hero); }
-  .bg-accent-gradient { background: var(--gradient-accent); }
-  .bg-paper { background: var(--gradient-paper); }
+  .bg-accent-gradient { background-image: var(--gradient-accent); }
+  .bg-paper { background-image: var(--gradient-paper); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-accent-glow { box-shadow: var(--shadow-accent); }
   .shadow-card-soft { box-shadow: var(--shadow-card); }
