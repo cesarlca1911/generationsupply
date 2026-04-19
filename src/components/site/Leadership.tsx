@@ -3,16 +3,16 @@ import { User } from "lucide-react";
 
 const team = [
   {
-    name: "Isaac Roberts",
-    title: "Head of Operations",
-    bio: "3rd Place at Fairfax HS Science Fair in the Environmental Engineering category and DECA States 2026 competitor. Manages data precision and distribution efficiency.",
-    primary: false,
-  },
-  {
     name: "Cesar Carlos",
     title: "Founder & Executive Director",
     bio: "Architect of the successful $518 pilot campaign at Greenbriar East ES within 2 days of initial launch through a prosperous community outreach movement reaching nearly 900 students and over 600 families. Specializes in scalable supply chains, digital infrastructure, and community outreach partnerships.",
     primary: true,
+  },
+  {
+    name: "Isaac Roberts",
+    title: "Head of Operations",
+    bio: "3rd Place at Fairfax HS Science Fair in the Environmental Engineering category and DECA States 2026 competitor. Manages data precision and distribution efficiency.",
+    primary: false,
   },
   {
     name: "Benji Cho",
