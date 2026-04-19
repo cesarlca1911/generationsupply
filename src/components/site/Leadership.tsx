@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
+import cesarHeadshot from "@/assets/cesar-carlos.png";
 
 const team = [
   {
@@ -7,6 +8,7 @@ const team = [
     title: "Founder & Executive Director",
     bio: "Architect of the successful $518 pilot campaign at Greenbriar East ES within 2 days of initial launch through a prosperous community outreach movement reaching nearly 900 students and over 600 families. Specializes in scalable supply chains, digital infrastructure, and community outreach partnerships.",
     primary: true,
+    image: cesarHeadshot,
   },
   {
     name: "Isaac Roberts",
@@ -70,13 +72,22 @@ export const Leadership = () => {
                     ? "ring-accent-foreground/30 bg-primary-foreground"
                     : "bg-primary-foreground/10 ring-accent/40 group-hover:ring-accent"
                 } transition-all duration-500`}
-                aria-label={`${m.name} headshot placeholder`}
+                aria-label={`${m.name} headshot`}
               >
-                <User
-                  className={`h-14 w-14 ${
-                    m.primary ? "text-accent-foreground/80" : "text-primary-foreground/60"
-                  }`}
-                />
+                {m.image ? (
+                  <img
+                    src={m.image}
+                    alt={`${m.name} headshot`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <User
+                    className={`h-14 w-14 ${
+                      m.primary ? "text-accent-foreground/80" : "text-primary-foreground/60"
+                    }`}
+                  />
+                )}
               </div>
 
               <div className="mt-6 text-center">
