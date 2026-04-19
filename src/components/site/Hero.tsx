@@ -28,7 +28,7 @@ export const Hero = () => {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-primary-foreground/80 text-balance">
-            Providing sustainable academic foundations for Fairfax County students — one classroom, one community, one notebook at a time.
+            Providing sustainable academic foundations for Fairfax County students — one classroom, one community, one supply drive at a time.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
