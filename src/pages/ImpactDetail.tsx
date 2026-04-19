@@ -10,7 +10,7 @@ const descriptions: Record<string, string> = {
   "gbe-mailers":
     "Direct logistics outreach. Teachers were equipped with personalized informational flyers to ensure communication with student families and to maximize participation.",
   "gbe-newsletter":
-    "Institutional validation and scaling. Feature in the school community newsletter, legitimizing Generation Supply as a trusted non-profit partner for future county-wide scaling.",
+    "Institutional validation and scaling through a feature in GBE's school community newsletter endorsed by the GBE Principal, legitimizing Generation Supply as a trusted non-profit partner for future county-wide scaling.",
 };
 
 const ImpactDetail = () => {
