@@ -60,18 +60,12 @@ export const Leadership = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative rounded-2xl p-8 border backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${
-                m.primary
-                  ? "bg-accent-gradient border-accent text-accent-foreground shadow-accent-glow lg:-mt-4"
-                  : "bg-primary-foreground/5 hover:shadow-accent-glow border-accent"
+              className={`group relative rounded-2xl p-8 border backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-accent-glow bg-accent-gradient border-accent text-accent-foreground shadow-accent-glow ${
+                m.primary ? "lg:-mt-4" : ""
               }`}
             >
               <div
-                className={`mx-auto h-28 w-28 rounded-full flex items-center justify-center overflow-hidden ring-4 ${
-                  m.primary
-                    ? "ring-accent-foreground/30 bg-primary-foreground"
-                    : "bg-primary-foreground/10 ring-accent/40 group-hover:ring-accent"
-                } transition-all duration-500`}
+                className="mx-auto h-28 w-28 rounded-full flex items-center justify-center overflow-hidden ring-4 ring-accent-foreground/30 bg-primary-foreground transition-all duration-500"
                 aria-label={`${m.name} headshot`}
               >
                 {m.image ? (
@@ -82,36 +76,20 @@ export const Leadership = () => {
                     loading="lazy"
                   />
                 ) : (
-                  <User
-                    className={`h-14 w-14 ${
-                      m.primary ? "text-accent-foreground/80" : "text-primary-foreground/60"
-                    }`}
-                  />
+                  <User className="h-14 w-14 text-accent-foreground/80" />
                 )}
               </div>
 
               <div className="mt-6 text-center">
-                <h3
-                  className={`font-display text-2xl font-bold ${
-                    m.primary ? "text-accent-foreground" : "text-primary-foreground"
-                  }`}
-                >
+                <h3 className="font-display text-2xl font-bold text-accent-foreground">
                   {m.name}
                 </h3>
-                <p
-                  className={`mt-1 text-xs uppercase tracking-[0.18em] font-semibold ${
-                    m.primary ? "text-accent-foreground/85" : "text-primary-foreground"
-                  }`}
-                >
+                <p className="mt-1 text-xs uppercase tracking-[0.18em] font-semibold text-accent-foreground/85">
                   {m.title}
                 </p>
               </div>
 
-              <p
-                className={`mt-5 text-sm leading-relaxed text-center ${
-                  m.primary ? "text-accent-foreground/90" : "text-primary-foreground/70"
-                }`}
-              >
+              <p className="mt-5 text-sm leading-relaxed text-center text-accent-foreground/90">
                 {m.bio}
               </p>
             </motion.article>
