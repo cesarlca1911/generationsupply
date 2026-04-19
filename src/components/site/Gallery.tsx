@@ -1,20 +1,26 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import dropbox from "@/assets/gbe-dropbox.jpeg";
 import mailers from "@/assets/gbe-mailers.jpeg";
 import newsletter from "@/assets/gbe-newsletter.jpeg";
 
-const items = [
+export const galleryItems = [
   {
+    slug: "gbe-dropbox",
     src: dropbox,
     title: "The GBE Drop-off Box",
     caption: "Direct Community Impact — supplies pouring in from Greenbriar East families.",
   },
   {
+    slug: "gbe-mailers",
     src: mailers,
     title: "Teacher Mailer Distribution",
     caption: "Direct Community Impact — every teacher receives a personalized request flyer.",
   },
   {
+    slug: "gbe-newsletter",
     src: newsletter,
     title: "Official GBE Newsletter Feature",
     caption: "Direct Community Impact — featured in the school's community newsletter.",
@@ -45,34 +51,52 @@ export const Gallery = () => {
         </motion.div>
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
-          {items.map((it, i) => (
-            <motion.figure
-              key={it.title}
+          {galleryItems.map((it, i) => (
+            <motion.div
+              key={it.slug}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.12 }}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={it.src}
-                  alt={it.title}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
-                    Direct Community Impact
-                  </div>
-                  <h3 className="mt-2 font-display text-xl font-bold">{it.title}</h3>
-                  <p className="mt-2 text-sm text-primary-foreground/80">{it.caption}</p>
-                </figcaption>
-              </div>
-            </motion.figure>
+              <Link
+                to={`/impact/${it.slug}`}
+                className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500"
+              >
+                <figure className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={it.src}
+                    alt={it.title}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                      Direct Community Impact
+                    </div>
+                    <h3 className="mt-2 font-display text-xl font-bold">{it.title}</h3>
+                    <p className="mt-2 text-sm text-primary-foreground/80">{it.caption}</p>
+                  </figcaption>
+                </figure>
+              </Link>
+            </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 flex justify-center"
+        >
+          <Button asChild variant="hero" size="lg">
+            <Link to="/impact/other-schools">
+              See Our Impact in Other Schools <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
