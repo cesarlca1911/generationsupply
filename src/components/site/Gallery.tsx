@@ -16,8 +16,8 @@ export const galleryItems = [
   {
     slug: "gbe-mailers",
     src: mailers,
-    title: "Teacher Mailer Distribution",
-    caption: "Direct Community Impact — every teacher receives a personalized request flyer.",
+    title: "Teacher Flyer Distribution",
+    caption: "Every teacher receives a personalized promotion flyer to redistribute to their students.",
   },
   {
     slug: "gbe-newsletter",
