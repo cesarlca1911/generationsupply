@@ -61,13 +61,13 @@ export const Leadership = () => {
               className={`group relative rounded-2xl p-8 border backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${
                 m.primary
                   ? "bg-accent-gradient border-accent text-accent-foreground shadow-accent-glow lg:-mt-4"
-                  : "bg-primary-foreground/5 border-primary-foreground/15 hover:border-accent/60 hover:shadow-accent-glow"
+                  : "bg-primary-foreground/5 hover:shadow-accent-glow border-accent"
               }`}
             >
               <div
                 className={`mx-auto h-28 w-28 rounded-full flex items-center justify-center overflow-hidden ring-4 ${
                   m.primary
-                    ? "bg-primary/20 ring-accent-foreground/30"
+                    ? "ring-accent-foreground/30 bg-primary-foreground"
                     : "bg-primary-foreground/10 ring-accent/40 group-hover:ring-accent"
                 } transition-all duration-500`}
                 aria-label={`${m.name} headshot placeholder`}
