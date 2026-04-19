@@ -83,7 +83,7 @@ export const Leadership = () => {
                 </h3>
                 <p
                   className={`mt-1 text-xs uppercase tracking-[0.18em] font-semibold ${
-                    m.primary ? "text-accent-foreground/85" : "text-accent"
+                    m.primary ? "text-accent-foreground/85" : "text-primary-foreground"
                   }`}
                 >
                   {m.title}
