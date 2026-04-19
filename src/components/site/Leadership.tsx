@@ -20,6 +20,12 @@ const team = [
     bio: "Drives on-the-ground operational execution and community engagement at our active drop-off hubs.",
     primary: false,
   },
+  {
+    name: "Charlie Canuel",
+    title: "Head of Communications & Research",
+    bio: "Spearheads institutional outreach and strategic research. Led the initial communication pipelines to Daniels Run and Eagle View Elementary, and co-developed the Educate Fairfax partnership strategy.",
+    primary: false,
+  },
 ];
 
 export const Leadership = () => {
@@ -44,7 +50,7 @@ export const Leadership = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-stretch">
           {team.map((m, i) => (
             <motion.article
               key={m.name}
@@ -54,7 +60,7 @@ export const Leadership = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`group relative rounded-2xl p-8 border backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${
                 m.primary
-                  ? "bg-accent-gradient border-accent text-accent-foreground shadow-accent-glow md:-mt-4"
+                  ? "bg-accent-gradient border-accent text-accent-foreground shadow-accent-glow lg:-mt-4"
                   : "bg-primary-foreground/5 border-primary-foreground/15 hover:border-accent/60 hover:shadow-accent-glow"
               }`}
             >
