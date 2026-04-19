@@ -5,12 +5,12 @@ const pillars = [
   {
     icon: BookOpen,
     title: "Academic Foundations",
-    body: "Pencils, folders, headphones — the basics every student needs to focus, learn and grow.",
+    body: "From pencils to folders and colored pencils to glue sticks, we're supplying every student with the basics they need to focus, learn, and grow.",
   },
   {
     icon: HandHeart,
     title: "Community Driven",
-    body: "Donations come from neighbors, families and local businesses who believe in our students.",
+    body: "Donations come from school teachers, local businesses, and families who believe in our students.",
   },
   {
     icon: Sprout,

@@ -4,6 +4,15 @@ import { Button } from "@/components/ui/button";
 import { galleryItems } from "@/components/site/Gallery";
 import { useEffect } from "react";
 
+const descriptions: Record<string, string> = {
+  "gbe-dropbox":
+    "Secured and centralized collection of premium academic assets. Our campaign raised $518 worth of these premium assets in merely 2 days after initial launch, which will be redistributed to directly support 100+ underprivileged GBE students.",
+  "gbe-mailers":
+    "Direct logistics outreach. Teachers were equipped with personalized informational flyers to ensure communication with student families and to maximize participation.",
+  "gbe-newsletter":
+    "Institutional validation and scaling. Feature in the school community newsletter, legitimizing Generation Supply as a trusted non-profit partner for future county-wide scaling.",
+};
+
 const ImpactDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const item = galleryItems.find((i) => i.slug === slug);
@@ -43,10 +52,7 @@ const ImpactDetail = () => {
               {item.title}
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              [Description Placeholder - Edit Later]
-            </p>
-            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-              {item.caption}
+              {descriptions[item.slug] ?? item.caption}
             </p>
           </div>
 

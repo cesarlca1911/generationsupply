@@ -5,7 +5,7 @@ const activeSchools = [
   {
     icon: CheckCircle2,
     school: "Greenbriar East Elementary",
-    detail: "Donation box live in school lobby. Teacher mailers distributed. Featured in community newsletter.",
+    detail: "Successfully piloted student-led supply distribution model. Validated logistics for securing $518 in high-quality assets for students in merely 2 days after initial launch. Active donation drop-off box is live.",
   },
 ];
 
@@ -13,17 +13,17 @@ const pipelineSchools = [
   {
     icon: Target,
     school: "Fairfax High School",
-    detail: "Engaging school administration to launch a peer-led collection drive on campus.",
+    detail: "In active conversations with administration to establish an official Generation Supply club chapter for the 2026-2027 academic year.",
   },
   {
     icon: Target,
     school: "TJHSST",
-    detail: "Building a partnership with student leadership to mobilize Thomas Jefferson volunteers.",
+    detail: "Engaging with student leadership and administration to adapt the GBE model for specialized high school logistics, mobilizing volunteers.",
   },
   {
     icon: Target,
     school: "Skyview High School",
-    detail: "Early conversations underway to bring a Generation Supply chapter to Skyview.",
+    detail: "Early outreach underway to adapt the logistics framework for a unique Skyview chapter, broadening our community density.",
   },
 ];
 
