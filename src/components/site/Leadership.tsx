@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
 import cesarHeadshot from "@/assets/cesar-carlos.png";
+import isaacHeadshot from "@/assets/isaac-roberts.png";
+import benjiHeadshot from "@/assets/benji-cho.png";
 
 const team = [
   {
@@ -15,12 +17,14 @@ const team = [
     title: "Head of Operations",
     bio: "Serves as Head of Operations, driving precision, operational efficiency, and high-performance leadership. A senior patrol leader in Scouts, competitor at Virginia DECA States 2026, and maintained a perfect 4.0 GPA this school year. Passionate about data-driven problem solving and sustainability, excelling at managing data accuracy and distribution efficiency.",
     primary: false,
+    image: isaacHeadshot,
   },
   {
     name: "Benji Cho",
     title: "Head of Logistics",
     bio: "Drives on-the-ground operational execution and community engagement at our active drop-off hubs.",
     primary: false,
+    image: benjiHeadshot,
   },
   {
     name: "Charlie Canuel",
