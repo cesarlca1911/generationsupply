@@ -1,5 +1,17 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { Users, DollarSign, Network } from "lucide-react";
+import {
+  Users,
+  DollarSign,
+  Network,
+  FolderClosed,
+  Palette,
+  Pencil,
+  Highlighter,
+  Eraser,
+  Paperclip,
+  Download,
+  MapPin,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 
 type Metric = {
@@ -33,6 +45,22 @@ const metrics: Metric[] = [
     label: "Active Hub · 3 Pitched Sites",
     sub: "Scaling across Fairfax County",
   },
+];
+
+type InventoryItem = {
+  name: string;
+  units: number;
+  icon: typeof Users;
+  status: "stocked" | "low";
+};
+
+const inventory: InventoryItem[] = [
+  { name: "Folders", units: 100, icon: FolderClosed, status: "stocked" },
+  { name: "Colored Pencils", units: 144, icon: Palette, status: "stocked" },
+  { name: "Pencils", units: 702, icon: Pencil, status: "stocked" },
+  { name: "Expo Markers", units: 100, icon: Highlighter, status: "stocked" },
+  { name: "Glue Sticks", units: 84, icon: Paperclip, status: "stocked" },
+  { name: "Highlighters", units: 16, icon: Eraser, status: "low" },
 ];
 
 const Counter = ({
@@ -126,6 +154,99 @@ export const ImpactDashboard = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Core Essentials Inventory Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-20 relative rounded-3xl border border-primary/15 bg-card/40 backdrop-blur-xl p-8 md:p-10 shadow-card-soft overflow-hidden"
+        >
+          <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-success/10 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" aria-hidden />
+
+          <div className="relative flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-success">Core Essentials Inventory</p>
+              <h3 className="mt-3 font-display text-2xl md:text-3xl font-black text-primary tracking-tight">
+                Primary Hub Stock Levels
+              </h3>
+              <div className="mt-2 flex items-center gap-2 text-sm text-slate">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span className="font-semibold text-primary">Greenbriar East Elementary</span>
+                <span className="opacity-60">· Donation Hub</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="group/exp inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/60 backdrop-blur px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              aria-label="Export inventory data"
+              title="Synced with internal logistics spreadsheet"
+            >
+              <Download className="h-4 w-4 transition-transform group-hover/exp:-translate-y-0.5" />
+              Export Data
+            </button>
+          </div>
+
+          <div className="relative mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+            {inventory.map((item, i) => {
+              const Icon = item.icon;
+              const stocked = item.status === "stocked";
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                  className="group/card relative rounded-2xl border border-primary/10 bg-background/50 backdrop-blur-md p-5 transition-all duration-500 hover:-translate-y-1 hover:border-success/40 hover:bg-background/70 hover:shadow-card-soft"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover/card:bg-success/10 group-hover/card:text-success">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span
+                      className={
+                        stocked
+                          ? "inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-success"
+                          : "inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent"
+                      }
+                    >
+                      <span
+                        className={
+                          stocked
+                            ? "h-1.5 w-1.5 rounded-full bg-success animate-pulse"
+                            : "h-1.5 w-1.5 rounded-full bg-accent animate-pulse"
+                        }
+                      />
+                      {stocked ? "Fully Stocked" : "Low Stock"}
+                    </span>
+                  </div>
+
+                  <div className="mt-5">
+                    <div className="font-display text-3xl font-black text-primary leading-none tracking-tight">
+                      {item.units.toLocaleString()}
+                    </div>
+                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate">Units</p>
+                    <p className="mt-3 text-sm font-semibold text-primary">{item.name}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="relative mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-primary/10 pt-5">
+            <p className="text-xs text-slate">
+              <span className="font-semibold uppercase tracking-[0.14em] text-primary">Last Audit:</span>{" "}
+              April 21, 2026
+            </p>
+            <p className="text-[11px] text-slate/70 italic">
+              Synced with internal logistics spreadsheet · Updated by hub coordinators
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
