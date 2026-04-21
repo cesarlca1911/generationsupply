@@ -13,7 +13,7 @@ const team = [
   {
     name: "Isaac Roberts",
     title: "Head of Operations",
-    bio: "3rd Place at Fairfax HS Science Fair in the Environmental Engineering category and DECA States 2026 competitor. Manages data precision and distribution efficiency.",
+    bio: "Serves as Head of Operations, driving precision, operational efficiency, and high-performance leadership. A senior patrol leader in Scouts, competitor at Virginia DECA States 2026, and maintained a perfect 4.0 GPA this school year. Passionate about data-driven problem solving and sustainability, excelling at managing data accuracy and distribution efficiency.",
     primary: false,
   },
   {
