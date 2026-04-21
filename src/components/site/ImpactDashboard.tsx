@@ -1,5 +1,17 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { Users, DollarSign, Network } from "lucide-react";
+import {
+  Users,
+  DollarSign,
+  Network,
+  FolderClosed,
+  Palette,
+  Pencil,
+  Highlighter,
+  Eraser,
+  Paperclip,
+  Download,
+  MapPin,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 
 type Metric = {
