@@ -29,6 +29,7 @@ const Index = () => {
       <Hero />
       <Mission />
       <Gallery />
+        <ImpactDashboard />
         <Roadmap />
         <Leadership />
         <Partners />
