@@ -25,7 +25,7 @@ const metrics: Metric[] = [
     prefix: "$",
     value: 518,
     label: "In Premium Academic Assets",
-    sub: "Sourced & distributed in the GBE pilot",
+    sub: "Sourced & distributed in the Greenbriar East initiative",
   },
   {
     icon: Network,
