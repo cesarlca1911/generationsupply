@@ -54,7 +54,7 @@ export const Vision = () => {
             >
               <span
                 aria-hidden
-                className="absolute -top-4 -right-2 font-display text-[7rem] leading-none font-black text-primary/5 select-none"
+                className="absolute -top-4 -right-2 font-display text-[7rem] leading-none font-black select-none text-secondary"
               >
                 {s.number}
               </span>
