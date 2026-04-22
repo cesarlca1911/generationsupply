@@ -55,7 +55,7 @@ type InventoryItem = {
 };
 
 const inventory: InventoryItem[] = [
-  { name: "Folders", units: 100, icon: FolderClosed, status: "stocked" },
+  { name: "Folders", units: 110, icon: FolderClosed, status: "stocked" },
   { name: "Colored Pencils", units: 144, icon: Palette, status: "stocked" },
   { name: "Pencils", units: 702, icon: Pencil, status: "stocked" },
   { name: "Expo Markers", units: 100, icon: Highlighter, status: "stocked" },
