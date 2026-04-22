@@ -35,7 +35,7 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 518,
+    value: 928.45,
     label: "In Premium Academic Assets",
     sub: "Sourced & distributed in the Greenbriar East initiative",
   },
@@ -75,7 +75,7 @@ const Counter = ({
   inView: boolean;
 }) => {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => `${prefix}${Math.round(v).toLocaleString()}${suffix}`);
+  const rounded = useTransform(count, (v) => `${prefix}${v.toLocaleString(undefined, { minimumFractionDigits: to % 1 !== 0 ? 2 : 0, maximumFractionDigits: to % 1 !== 0 ? 2 : 0 })}${suffix}`);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const Counter = ({
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (latest) => {
         if (ref.current) {
-          ref.current.textContent = `${prefix}${Math.round(latest).toLocaleString()}${suffix}`;
+          ref.current.textContent = `${prefix}${latest.toLocaleString(undefined, { minimumFractionDigits: to % 1 !== 0 ? 2 : 0, maximumFractionDigits: to % 1 !== 0 ? 2 : 0 })}${suffix}`;
         }
       },
     });
