@@ -38,7 +38,7 @@ export const Partners = () => {
                 <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-bold">Featured Partner</div>
                 <h3 className="mt-2 font-display text-3xl font-black text-primary">Chick-fil-A Fair Lakes</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Proud community sponsor of Generation Supply — fueling our team and our mission.
+                  Proud community sponsor of Generation Supply's initiative at Greenbriar East, confirming a Spirit Night on Thursday, September 17th from 4-8 PM
                 </p>
               </div>
             </div>
