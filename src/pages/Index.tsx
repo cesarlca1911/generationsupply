@@ -7,6 +7,7 @@ import { ImpactDashboard } from "@/components/site/ImpactDashboard";
 import { Vision } from "@/components/site/Vision";
 import { Leadership } from "@/components/site/Leadership";
 import { Partners } from "@/components/site/Partners";
+import { Instagram } from "@/components/site/Instagram";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { useEffect } from "react";
@@ -35,6 +36,7 @@ const Index = () => {
         <Roadmap />
         <Leadership />
         <Partners />
+        <Instagram />
       <Contact />
       <Footer />
     </main>
