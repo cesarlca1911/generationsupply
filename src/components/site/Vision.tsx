@@ -18,7 +18,7 @@ const steps = [
     number: "03",
     icon: Home,
     title: "Direct Family Support",
-    body: "Success starts at home. We equip families with personalized advice and navigation strategies for the school system — from course selection to advocacy — so every student has a champion in their corner.",
+    body: "We believe that academic success starts at home. We are planning to equip families with personalized advice and navigation strategies for the school system: from course selection to general advocacy, so every student has a champion in their corner.",
   },
 ];
 
