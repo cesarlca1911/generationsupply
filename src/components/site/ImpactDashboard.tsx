@@ -42,7 +42,7 @@ const metrics: Metric[] = [
   {
     icon: Network,
     value: 1,
-    label: "Active Hub · 3 Pitched Sites",
+    label: "1 Active Hub · 4 Pitched Sites",
     sub: "Scaling across Fairfax County",
   },
 ];
