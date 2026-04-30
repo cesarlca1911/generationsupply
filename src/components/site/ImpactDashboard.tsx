@@ -35,7 +35,7 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 928.45,
+    value: 951.61,
     label: "In Premium Academic Assets",
     sub: "Sourced & distributed in the Greenbriar East initiative",
   },
