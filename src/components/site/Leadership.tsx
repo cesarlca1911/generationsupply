@@ -3,6 +3,7 @@ import { User } from "lucide-react";
 import cesarHeadshot from "@/assets/cesar-carlos.png";
 import isaacHeadshot from "@/assets/isaac-roberts.png";
 import benjiHeadshot from "@/assets/benji-cho.png";
+import charlieHeadshot from "@/assets/charlie-canuel.png";
 
 const team = [
   {
@@ -20,17 +21,18 @@ const team = [
     image: isaacHeadshot,
   },
   {
+    name: "Charlie Canuel",
+    title: "Head of Communications & Research",
+    bio: "I spearheaded institutional outreach and strategic research.  Additionally, I led the initial communication pipeline pitches  to Daniels Run and Eagle View Elementary, and co-developed important corporate partnerships.",
+    primary: false,
+    image: charlieHeadshot,
+  },
+  {
     name: "Benji Cho",
     title: "Head of Logistics",
     bio: "Drives on-the-ground operational execution and community engagement at our active drop-off hubs.",
     primary: false,
     image: benjiHeadshot,
-  },
-  {
-    name: "Charlie Canuel",
-    title: "Head of Communications & Research",
-    bio: "I spearheaded institutional outreach and strategic research.  Additionally, I led the initial communication pipeline pitches  to Daniels Run and Eagle View Elementary, and co-developed important corporate partnerships.",
-    primary: false,
   },
 ];
 
