@@ -27,8 +27,8 @@ type Metric = {
 const metrics: Metric[] = [
   {
     icon: Users,
-    value: 290,
-    suffix: "+",
+    value: 300,
+    suffix: "",
     label: "Underserved Students",
     sub: "Directly supported across active hubs",
   },
