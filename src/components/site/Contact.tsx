@@ -67,7 +67,7 @@ export const Contact = () => {
       console.error(err);
       toast({
         title: "Something went wrong",
-        description: "Please try again or email cesarlca0125@gmail.com directly.",
+        description: "Please try again or email generationsupplyinquiries@gmail.com directly.",
         variant: "destructive",
       });
     } finally {
@@ -94,7 +94,7 @@ export const Contact = () => {
           </p>
 
           <a
-            href="mailto:cesarlca0125@gmail.com"
+            href="mailto:generationsupplyinquiries@gmail.com"
             className="mt-8 inline-flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-card-soft hover:shadow-elegant transition-all"
           >
             <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-gradient text-accent-foreground">
@@ -102,7 +102,7 @@ export const Contact = () => {
             </div>
             <div>
               <div className="text-xs uppercase tracking-wider text-muted-foreground">Email directly</div>
-              <div className="font-semibold text-primary">cesarlca0125@gmail.com</div>
+              <div className="font-semibold text-primary text-sm sm:text-base">generationsupplyinquiries@gmail.com</div>
             </div>
           </a>
         </motion.div>
