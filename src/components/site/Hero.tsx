@@ -45,7 +45,7 @@ export const Hero = () => {
           <dl className="mt-14 grid grid-cols-3 gap-6 max-w-lg">
             {[
               { k: "1", v: "Active school" },
-              { k: "3+", v: "Schools in pipeline" },
+              { k: "4+", v: "Schools in pipeline" },
               { k: "100%", v: "Student-run" },
             ].map((s) => (
               <div key={s.v}>
