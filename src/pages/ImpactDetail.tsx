@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const descriptions: Record<string, string> = {
   "gbe-dropbox":
-    "Secured and centralized collection of premium academic assets. Our campaign has raised $928.45 worth of these premium assets in a single week after initial launch, which will be redistributed to directly support over 290 underprivileged GBE students.",
+    "Secured and centralized collection of premium academic assets. Our campaign has raised $953.04 worth of these premium assets in a single week after initial launch, which will be redistributed to directly support over 290 underprivileged GBE students.",
   "gbe-mailers":
     "Direct logistics outreach. Teachers were equipped with personalized informational flyers to ensure communication with student families and to maximize participation.",
   "gbe-newsletter":
