@@ -5,7 +5,7 @@ const activeSchools = [
   {
     icon: CheckCircle2,
     school: "Greenbriar East Elementary",
-    detail: "Successfully piloted student-led supply distribution model. Validated logistics for securing $518 in high-quality assets for students in merely 2 days after initial launch. Active donation drop-off box is live.",
+    detail: "Successfully piloted student-led supply distribution model. Validated logistics for securing $953.04 worth of high-quality assets for underserved students in merely 2 weeks after initial launch. Active donation drop-off box is live.",
   },
 ];
 
