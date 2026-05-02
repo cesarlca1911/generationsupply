@@ -43,6 +43,11 @@ const donationHubSchools = [
     school: "Providence Elementary",
     detail: "",
   },
+  {
+    icon: Target,
+    school: "Navy Elementary",
+    detail: "",
+  },
 ];
 
 export const Roadmap = () => {
