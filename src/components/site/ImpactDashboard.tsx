@@ -60,6 +60,7 @@ const inventory: InventoryItem[] = [
   { name: "Pencils", units: 1568, icon: Pencil, status: "stocked" },
   { name: "Expo Markers", units: 100, icon: Highlighter, status: "stocked" },
   { name: "Glue Sticks", units: 214, icon: Paperclip, status: "stocked" },
+  { name: "Crayons", units: 312, icon: Palette, status: "stocked" },
   { name: "Highlighters", units: 16, icon: Eraser, status: "low" },
 ];
 
