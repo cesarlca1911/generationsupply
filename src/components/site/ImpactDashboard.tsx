@@ -208,22 +208,6 @@ export const ImpactDashboard = () => {
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover/card:bg-success/10 group-hover/card:text-success">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <span
-                      className={
-                        stocked
-                          ? "inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-success"
-                          : "inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent"
-                      }
-                    >
-                      <span
-                        className={
-                          stocked
-                            ? "h-1.5 w-1.5 rounded-full bg-success animate-pulse"
-                            : "h-1.5 w-1.5 rounded-full bg-accent animate-pulse"
-                        }
-                      />
-                      {stocked ? "Fully Stocked" : "Low Stock"}
-                    </span>
                   </div>
 
                   <div className="mt-5">
