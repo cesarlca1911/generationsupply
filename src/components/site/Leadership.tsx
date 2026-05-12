@@ -16,7 +16,7 @@ const team = [
   {
     name: "Isaac Roberts",
     title: "Head of Operations",
-    bio: "I serve as Head of Operations, driving precision, operational efficiency, and high-performance leadership. I am a senior patrol leader in Scouts, competitor at Virginia DECA States 2026, and I maintained a perfect 4.0 GPA this school year. I'm extremely passionate about data-driven problem solving and sustainability, excelling at managing data accuracy and distribution efficiency.",
+    bio: "",
     primary: false,
     image: isaacHeadshot,
   },
