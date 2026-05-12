@@ -23,7 +23,7 @@ const team = [
   {
     name: "Charlie Canuel",
     title: "Head of Communications & Research",
-    bio: "I spearheaded institutional outreach and strategic research.  Additionally, I led the initial communication pipeline pitches  to Daniels Run and Eagle View Elementary, and co-developed important corporate partnerships.",
+    bio: "",
     primary: false,
     image: charlieHeadshot,
   },
