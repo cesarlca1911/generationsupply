@@ -9,7 +9,7 @@ const team = [
   {
     name: "Cesar Carlos",
     title: "Founder & Executive Director",
-    bio: "Driven by a 4.25 GPA and a passion for high-velocity business operations, I enjoy building scalable systems that bridge the gap between community resources and student needs. My professional foundation was built in the field through assisting with HVAC operations and managing logistics for a successful e-commerce reselling business, where I developed an obsession with efficiency, inventory management, and supply chain reliability.  I specialize in scalable supply chains, digital infrastructure, and community outreach partnerships.",
+    bio: "",
     primary: true,
     image: cesarHeadshot,
   },
