@@ -30,7 +30,7 @@ const team = [
   {
     name: "Benji Cho",
     title: "Head of Logistics",
-    bio: "Drives on-the-ground operational execution and community engagement at our active drop-off hubs.",
+    bio: "",
     primary: false,
     image: benjiHeadshot,
   },
