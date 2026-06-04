@@ -22,13 +22,13 @@ export const Hero = () => {
           </div>
 
           <h1 className="mt-6 font-display font-black text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-balance">
-            Equipping the{" "}
-            <span className="bg-accent-gradient bg-clip-text text-transparent">Next Generation</span>{" "}
-            and Beyond.
+            Optimizing Resource Procurement for{" "}
+            <span className="bg-accent-gradient bg-clip-text text-transparent">Academic Equality</span>{" "}
+            Across Fairfax County.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-primary-foreground/80 text-balance">
-            Providing sustainable academic foundations for Fairfax County students — one classroom, one community, one supply drive at a time.
+            A student-led, hub-and-spoke community initiative engineering end-to-end supply chains to route high-demand academic assets from collection hubs directly to underserved regional campuses.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -44,9 +44,9 @@ export const Hero = () => {
 
           <dl className="mt-14 grid grid-cols-3 gap-6 max-w-lg">
             {[
-              { k: "1", v: "Active school" },
-              { k: "4+", v: "Schools in pipeline" },
-              { k: "100%", v: "Student-run" },
+              { k: "2", v: "Procurement hubs" },
+              { k: "1", v: "Distribution hub" },
+              { k: "780", v: "Students supported" },
             ].map((s) => (
               <div key={s.v}>
                 <dt className="font-display text-3xl md:text-4xl font-black text-accent">{s.k}</dt>

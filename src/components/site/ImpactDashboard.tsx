@@ -3,6 +3,7 @@ import {
   Users,
   DollarSign,
   Network,
+  Building2,
   FolderClosed,
   Palette,
   Pencil,
@@ -26,24 +27,29 @@ type Metric = {
 
 const metrics: Metric[] = [
   {
-    icon: Users,
-    value: 300,
-    suffix: "",
-    label: "Underserved Students",
-    sub: "Directly supported across active hubs",
-  },
-  {
     icon: DollarSign,
     prefix: "$",
-    value: 953.04,
-    label: "In Premium Academic Assets",
-    sub: "Sourced & distributed in the Greenbriar East initiative",
+    value: 1124.34,
+    label: "Total Monetary Value Raised",
+    sub: "Aggregate value of premium supply assets across donation hubs",
+  },
+  {
+    icon: Users,
+    value: 780,
+    label: "Underserved Students Supported",
+    sub: "Target demographic receiving optimized material distribution",
   },
   {
     icon: Network,
+    value: 2,
+    label: "Active Supply Donation Hubs",
+    sub: "Operational collection networks at regional campuses",
+  },
+  {
+    icon: Building2,
     value: 1,
-    label: "1 Active Hub · 4 Pitched Sites",
-    sub: "Scaling across Fairfax County",
+    label: "Verified Distribution Hub",
+    sub: "Institutional beneficiary campus onboarded to the network",
   },
 ];
 
@@ -126,7 +132,7 @@ export const ImpactDashboard = () => {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}

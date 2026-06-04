@@ -1,5 +1,21 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
+import chickFilA from "@/assets/chick-fil-a.png.asset.json";
+import educateFairfax from "@/assets/educate-fairfax.png.asset.json";
+
+const partners = [
+  {
+    name: "Chick-fil-A Fair Lakes",
+    tag: "Spirit Night Sponsor",
+    logo: chickFilA.url,
+    detail: "Spirit Night scheduled for September 17, 2026 — directly fueling our procurement hub operations.",
+  },
+  {
+    name: "Educate Fairfax",
+    tag: "Institutional Ally",
+    logo: educateFairfax.url,
+    detail: "Strategic alignment with Fairfax County's leading education nonprofit, amplifying our regional reach.",
+  },
+];
 
 export const Partners = () => {
   return (
@@ -12,12 +28,12 @@ export const Partners = () => {
           transition={{ duration: 0.7 }}
           className="text-center max-w-2xl mx-auto"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Partner Spotlight</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Strategic Alliances & Sustainability</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-primary text-balance">
-            Powered by community partners.
+            Backed by partners who share the mission.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Local businesses standing behind our students.
+            Corporate and institutional alliances powering our regional logistics network.
           </p>
         </motion.div>
 
@@ -26,31 +42,39 @@ export const Partners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-14 max-w-2xl mx-auto"
+          className="mt-14 grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto"
         >
-          <div className="relative rounded-3xl bg-card border border-border p-8 md:p-10 shadow-elegant overflow-hidden">
-            <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" aria-hidden />
-            <div className="relative flex flex-col sm:flex-row items-center gap-6">
-              <div className="h-20 w-20 flex-shrink-0 rounded-2xl bg-accent-gradient text-accent-foreground inline-flex items-center justify-center shadow-accent-glow">
-                <Award className="h-10 w-10" />
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-bold">Featured Partner</div>
-                <h3 className="mt-2 font-display text-3xl font-black text-primary">Chick-fil-A Fair Lakes</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Proud community sponsor of Generation Supply's initiative at Greenbriar East, confirming a Spirit Night on Thursday, September 17th from 4-8 PM
-                </p>
+          {partners.map((p) => (
+            <div
+              key={p.name}
+              className="group relative rounded-3xl bg-card border border-border p-8 md:p-10 shadow-card-soft overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-elegant hover:border-accent/40"
+            >
+              <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" aria-hidden />
+              <div className="relative flex flex-col items-center text-center gap-5">
+                <div className="h-24 w-full flex items-center justify-center">
+                  <img
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    className="max-h-24 max-w-[220px] object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-bold">{p.tag}</div>
+                  <h3 className="mt-2 font-display text-2xl font-black text-primary">{p.name}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.detail}</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <p className="mt-8 text-center text-sm text-muted-foreground">
-            Want to see your business here?{" "}
-            <a href="#contact" className="text-primary font-semibold underline-offset-4 hover:underline">
-              Become a partner →
-            </a>
-          </p>
+          ))}
         </motion.div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground">
+          Want to see your business here?{" "}
+          <a href="#contact" className="text-primary font-semibold underline-offset-4 hover:underline">
+            Become a partner →
+          </a>
+        </p>
       </div>
     </section>
   );
