@@ -125,6 +125,10 @@ const Counter = ({
 export const ImpactDashboard = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const [activeHub, setActiveHub] = useState<"greenbriar" | "navy">("greenbriar");
+  const currentHub = inventoryByHub[activeHub];
+  const otherHubKey = activeHub === "greenbriar" ? "navy" : "greenbriar";
+  const otherHubName = inventoryByHub[otherHubKey].hubName;
 
   return (
     <section
