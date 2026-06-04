@@ -7,6 +7,11 @@ const activeSchools = [
     school: "Greenbriar East Elementary",
     detail: "Successfully piloted student-led supply distribution model. Validated logistics for securing $953.04 worth of high-quality assets for underserved students in merely 2 weeks after initial launch. Active donation drop-off box is live.",
   },
+  {
+    icon: CheckCircle2,
+    school: "Navy Elementary",
+    detail: "Active donation hub onboarded to the network, expanding our regional procurement footprint and supporting consistent supply intake.",
+  },
 ];
 
 const pipelineSchools = [
@@ -15,40 +20,9 @@ const pipelineSchools = [
     school: "Fairfax High School",
     detail: "In active conversations with administration to establish an official Generation Supply club chapter for the 2026-2027 academic year.",
   },
-  {
-    icon: Target,
-    school: "TJHSST",
-    detail: "Engaging with student leadership and administration to adapt the GBE model for specialized high school logistics, mobilizing volunteers.",
-  },
-  {
-    icon: Target,
-    school: "Skyview High School",
-    detail: "Early outreach underway to adapt the logistics framework for a unique Skyview chapter, broadening our community density.",
-  },
 ];
 
-const donationHubSchools = [
-  {
-    icon: Target,
-    school: "Brookfield Elementary",
-    detail: "",
-  },
-  {
-    icon: Target,
-    school: "Willow Springs Elementary",
-    detail: "",
-  },
-  {
-    icon: Target,
-    school: "Providence Elementary",
-    detail: "",
-  },
-  {
-    icon: Target,
-    school: "Navy Elementary",
-    detail: "",
-  },
-];
+const donationHubSchools: { icon: typeof Target; school: string; detail: string }[] = [];
 
 export const Roadmap = () => {
   return (
