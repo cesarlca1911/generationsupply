@@ -205,32 +205,47 @@ export const ImpactDashboard = () => {
               </h3>
               <div className="mt-2 flex items-center gap-2 text-sm text-slate">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span className="font-semibold text-primary">Greenbriar East Elementary</span>
-                <span className="opacity-60">· Donation Hub</span>
+                <span className="font-semibold text-primary">{currentHub.hubName}</span>
+                <span className="opacity-60">· {currentHub.hubLabel}</span>
               </div>
             </div>
 
-            <button
-              type="button"
-              className="group/exp inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/60 backdrop-blur px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
-              aria-label="Export inventory data"
-              title="Synced with internal logistics spreadsheet"
-            >
-              <Download className="h-4 w-4 transition-transform group-hover/exp:-translate-y-0.5" />
-              Export Data
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setActiveHub(otherHubKey)}
+                className="group/swap inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent transition-all hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                aria-label={`See inventory from ${otherHubName}`}
+              >
+                <ArrowLeftRight className="h-4 w-4 transition-transform group-hover/swap:rotate-180" />
+                See Inventory from Other Hubs
+              </button>
+              <button
+                type="button"
+                className="group/exp inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/60 backdrop-blur px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                aria-label="Export inventory data"
+                title="Synced with internal logistics spreadsheet"
+              >
+                <Download className="h-4 w-4 transition-transform group-hover/exp:-translate-y-0.5" />
+                Export Data
+              </button>
+            </div>
           </div>
 
-          <div className="relative mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-            {inventory.map((item, i) => {
+          <motion.div
+            key={activeHub}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5"
+          >
+            {currentHub.items.map((item, i) => {
               const Icon = item.icon;
-              const stocked = item.status === "stocked";
               return (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.06 }}
                   className="group/card relative rounded-2xl border border-primary/10 bg-background/50 backdrop-blur-md p-5 transition-all duration-500 hover:-translate-y-1 hover:border-success/40 hover:bg-background/70 hover:shadow-card-soft"
                 >
@@ -250,12 +265,12 @@ export const ImpactDashboard = () => {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           <div className="relative mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-primary/10 pt-5">
             <p className="text-xs text-slate">
               <span className="font-semibold uppercase tracking-[0.14em] text-primary">Last Audit:</span>{" "}
-              April 30, 2026
+              May 21, 2026
             </p>
             <p className="text-[11px] text-slate/70 italic">
               Synced with internal logistics spreadsheet · Updated by hub coordinators
