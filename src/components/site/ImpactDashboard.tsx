@@ -61,15 +61,34 @@ type InventoryItem = {
   status: "stocked" | "low";
 };
 
-const inventory: InventoryItem[] = [
-  { name: "Folders", units: 112, icon: FolderClosed, status: "stocked" },
-  { name: "Colored Pencils", units: 144, icon: Palette, status: "stocked" },
-  { name: "Pencils", units: 1568, icon: Pencil, status: "stocked" },
-  { name: "Expo Markers", units: 100, icon: Highlighter, status: "stocked" },
-  { name: "Glue Sticks", units: 214, icon: Paperclip, status: "stocked" },
-  { name: "Crayons", units: 312, icon: Palette, status: "stocked" },
-  { name: "Highlighters", units: 16, icon: Eraser, status: "low" },
-];
+const inventoryByHub: Record<string, { hubName: string; hubLabel: string; items: InventoryItem[] }> = {
+  greenbriar: {
+    hubName: "Greenbriar East Elementary",
+    hubLabel: "Donation Hub",
+    items: [
+      { name: "Folders", units: 112, icon: FolderClosed, status: "stocked" },
+      { name: "Colored Pencils", units: 144, icon: Palette, status: "stocked" },
+      { name: "Pencils", units: 1568, icon: Pencil, status: "stocked" },
+      { name: "Expo Markers", units: 100, icon: Highlighter, status: "stocked" },
+      { name: "Glue Sticks", units: 214, icon: Paperclip, status: "stocked" },
+      { name: "Crayons", units: 312, icon: Palette, status: "stocked" },
+      { name: "Highlighters", units: 16, icon: Eraser, status: "low" },
+    ],
+  },
+  navy: {
+    hubName: "Navy Elementary",
+    hubLabel: "Donation Hub",
+    items: [
+      { name: "Folders", units: 0, icon: FolderClosed, status: "stocked" },
+      { name: "Colored Pencils", units: 0, icon: Palette, status: "stocked" },
+      { name: "Pencils", units: 0, icon: Pencil, status: "stocked" },
+      { name: "Expo Markers", units: 0, icon: Highlighter, status: "stocked" },
+      { name: "Glue Sticks", units: 0, icon: Paperclip, status: "stocked" },
+      { name: "Crayons", units: 0, icon: Palette, status: "stocked" },
+      { name: "Highlighters", units: 0, icon: Eraser, status: "stocked" },
+    ],
+  },
+};
 
 const Counter = ({
   to,
