@@ -33,6 +33,7 @@ const Index = () => {
       <Mission />
       <Gallery />
         <ImpactDashboard />
+        <OperationalEcosystem />
         <Vision />
         <Roadmap />
         <Leadership />
