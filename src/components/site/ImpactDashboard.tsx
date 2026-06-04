@@ -3,6 +3,7 @@ import {
   Users,
   DollarSign,
   Network,
+  Building2,
   FolderClosed,
   Palette,
   Pencil,
