@@ -29,9 +29,36 @@ const navyItems = [
 ];
 
 const OtherSchoolsImpact = () => {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeTitle, setActiveTitle] = useState<string>("");
+
+  const openLightbox = (src: string, title: string) => {
+    setActiveImage(src);
+    setActiveTitle(title);
+  };
+
+  const closeLightbox = useCallback(() => {
+    setActiveImage(null);
+    setActiveTitle("");
+  }, []);
+
   useEffect(() => {
     document.title = "Impact in Other Schools — Generation Supply";
   }, []);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+    };
+    if (activeImage) {
+      document.addEventListener("keydown", handleKey);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [activeImage, closeLightbox]);
 
   return (
     <main className="min-h-screen bg-background">
