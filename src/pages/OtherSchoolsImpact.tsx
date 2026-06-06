@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowLeft, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
 import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
 import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
