@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowLeft, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
 import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
 import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
@@ -29,9 +29,36 @@ const navyItems = [
 ];
 
 const OtherSchoolsImpact = () => {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeTitle, setActiveTitle] = useState<string>("");
+
+  const openLightbox = (src: string, title: string) => {
+    setActiveImage(src);
+    setActiveTitle(title);
+  };
+
+  const closeLightbox = useCallback(() => {
+    setActiveImage(null);
+    setActiveTitle("");
+  }, []);
+
   useEffect(() => {
     document.title = "Impact in Other Schools — Generation Supply";
   }, []);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+    };
+    if (activeImage) {
+      document.addEventListener("keydown", handleKey);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [activeImage, closeLightbox]);
 
   return (
     <main className="min-h-screen bg-background">
@@ -65,7 +92,10 @@ const OtherSchoolsImpact = () => {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.12 }}
             >
-              <div className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500">
+              <button
+                onClick={() => openLightbox(it.src, it.title)}
+                className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500 w-full text-left cursor-pointer"
+              >
                 <figure className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={it.src}
@@ -82,7 +112,7 @@ const OtherSchoolsImpact = () => {
                     <p className="mt-2 text-sm text-primary-foreground/80">{it.caption}</p>
                   </figcaption>
                 </figure>
-              </div>
+              </button>
             </motion.div>
           ))}
         </div>
@@ -93,6 +123,37 @@ const OtherSchoolsImpact = () => {
           </Button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeLightbox}
+          >
+            <button
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 z-50 text-white/80 hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              src={activeImage}
+              alt={activeTitle}
+              className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 };
