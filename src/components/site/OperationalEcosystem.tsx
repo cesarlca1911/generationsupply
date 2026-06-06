@@ -32,7 +32,7 @@ const phases = [
     body: "Direct B2S (Business-to-School) routing to verified beneficiary campuses with the highest documented need.",
     stats: [
       { label: "Brookfield Elementary School", detail: "68% low-income · 713 students · 480 directly equipped" },
-      { label: "Greenbriar East Elementary", detail: "300 students sustained through 2028" },
+      { label: "Greenbriar East Elementary", detail: "33% low-income · 898 students · 300 directly supported" },
     ],
   },
 ];
