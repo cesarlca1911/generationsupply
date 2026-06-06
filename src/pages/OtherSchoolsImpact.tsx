@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
 import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
+import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
 
 const navyItems = [
   {
@@ -18,6 +19,12 @@ const navyItems = [
     src: navySupplies.url,
     title: "Supplies Raised in 3 Days",
     caption: "$158.14 worth of premium academic supplies collected in just 3 days of the Navy ES supply drive.",
+  },
+  {
+    slug: "navy-newsletter",
+    src: navyNewsletter.url,
+    title: "Featured in the Official Navy ES Newsletter",
+    caption: "Generation Supply's initial feature in the official Navy Elementary school newsletter — formally introducing the donation drive to the entire Navy ES community.",
   },
 ];
 
