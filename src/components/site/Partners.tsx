@@ -51,14 +51,19 @@ export const Partners = () => {
             >
               <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" aria-hidden />
               <div className="relative flex flex-col items-center text-center gap-5">
-                <div className="h-24 w-full flex items-center justify-center">
+                <a
+                  href={p.name === "Chick-fil-A Fair Lakes" ? "https://www.chick-fil-a.com/locations/va/fair-lakes-va?utm_source=google&utm_medium=gmb" : "https://www.educatefairfax.org/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-24 w-full flex items-center justify-center"
+                >
                   <img
                     src={p.logo}
                     alt={`${p.name} logo`}
-                    className="max-h-24 max-w-[220px] object-contain"
+                    className="max-h-24 max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
-                </div>
+                </a>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-bold">{p.tag}</div>
                   <h3 className="mt-2 font-display text-2xl font-black text-primary">{p.name}</h3>
