@@ -30,7 +30,7 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 1124.34,
+    value: 1388.73,
     label: "Total Monetary Value Raised",
     sub: "Aggregate value of premium supply assets across donation hubs",
   },
