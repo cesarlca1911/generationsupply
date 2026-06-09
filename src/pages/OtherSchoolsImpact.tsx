@@ -117,6 +117,47 @@ const OtherSchoolsImpact = () => {
           ))}
         </div>
 
+        {/* Brookfield ES — Coming Soon */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="mt-20 max-w-2xl"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Pipeline Expansion</p>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-primary text-balance">
+            Field Operations: Brookfield ES
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground text-balance">
+            Our next distribution target — a high-need Title I school receiving surplus supplies from Greenbriar East ES and Navy ES hubs.
+          </p>
+        </motion.div>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-6 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="group block relative overflow-hidden rounded-2xl border-2 border-dashed border-accent/40 bg-accent/5 shadow-card-soft transition-all duration-500 w-full">
+              <figure className="relative aspect-[4/5] overflow-hidden flex flex-col items-center justify-center text-center p-6">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-6">
+                  <Clock className="h-8 w-8" />
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  Coming Soon
+                </div>
+                <h3 className="mt-2 font-display text-xl font-bold text-primary">Brookfield ES Distribution Hub</h3>
+                <p className="mt-2 text-sm text-muted-foreground max-w-xs">
+                  Supplies collected from Greenbriar East ES and Navy ES will be routed to Brookfield Elementary — a high-need Title I campus — as our next verified distribution hub.
+                </p>
+              </figure>
+            </div>
+          </motion.div>
+        </div>
+
         <div className="mt-12">
           <Button asChild variant="hero" size="lg">
             <Link to="/"><ArrowLeft className="mr-1 h-4 w-4" /> Back to Home</Link>
