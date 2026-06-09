@@ -5,7 +5,7 @@ import { ImpactDashboard } from "@/components/site/ImpactDashboard";
 
 const Inventory = () => {
   useEffect(() => {
-    document.title = "Core Essentials Inventory — Generation Supply";
+    document.title = "Data & Inventory — Generation Supply";
     window.scrollTo(0, 0);
   }, []);
 

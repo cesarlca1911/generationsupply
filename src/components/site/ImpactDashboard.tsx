@@ -186,7 +186,7 @@ export const ImpactDashboard = () => {
           ))}
         </div>
 
-        {/* Core Essentials Inventory Grid */}
+        {/* Data & Inventory Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ export const ImpactDashboard = () => {
 
           <div className="relative flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-success">Core Essentials Inventory</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-success">Data &amp; Inventory</p>
               <h3 className="mt-3 font-display text-2xl md:text-3xl font-black text-primary tracking-tight">
                 Primary Hub Stock Levels
               </h3>
