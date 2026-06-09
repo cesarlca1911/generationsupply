@@ -7,6 +7,10 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ImpactDetail from "./pages/ImpactDetail.tsx";
 import OtherSchoolsImpact from "./pages/OtherSchoolsImpact.tsx";
+import ResultsInAction from "./pages/ResultsInAction.tsx";
+import Inventory from "./pages/Inventory.tsx";
+import VisionPage from "./pages/VisionPage.tsx";
+import Events from "./pages/Events.tsx";
 
 const queryClient = new QueryClient();
 
