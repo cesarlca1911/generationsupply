@@ -22,6 +22,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/results-in-action" element={<ResultsInAction />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/vision" element={<VisionPage />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/impact/other-schools" element={<OtherSchoolsImpact />} />
           <Route path="/impact/:slug" element={<ImpactDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
