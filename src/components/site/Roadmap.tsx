@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Target } from "lucide-react";
+import { CheckCircle2, Target, Heart } from "lucide-react";
 
-const activeSchools = [
+const donorSchools = [
   {
     icon: CheckCircle2,
     school: "Greenbriar East Elementary",
@@ -11,6 +11,19 @@ const activeSchools = [
     icon: CheckCircle2,
     school: "Navy Elementary",
     detail: "Active donation hub onboarded to the network, expanding our regional procurement footprint and supporting consistent supply intake.",
+  },
+];
+
+const recipientSchools = [
+  {
+    icon: Heart,
+    school: "Greenbriar East Elementary",
+    detail: "33% low-income student body receiving direct material support and optimized supply distribution from the network.",
+  },
+  {
+    icon: Heart,
+    school: "Brookfield Elementary",
+    detail: "68% low-income Title I campus · 713 students · receiving targeted supply distribution as a high-need beneficiary school.",
   },
 ];
 
@@ -46,8 +59,8 @@ export const Roadmap = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-10 lg:gap-12">
-          {/* Active Schools */}
+        <div className="mt-16 grid lg:grid-cols-3 gap-10 lg:gap-12">
+          {/* Donor Schools */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -57,10 +70,10 @@ export const Roadmap = () => {
               className="flex items-center gap-3 mb-6"
             >
               <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <h3 className="font-display text-2xl font-bold text-accent">Active Schools</h3>
+              <h3 className="font-display text-2xl font-bold text-accent">Donor Schools</h3>
             </motion.div>
             <div className="space-y-5">
-              {activeSchools.map((s, i) => (
+              {donorSchools.map((s, i) => (
                 <motion.div
                   key={s.school}
                   initial={{ opacity: 0, y: 30 }}
@@ -77,6 +90,43 @@ export const Roadmap = () => {
                     {s.school}
                   </h4>
                   <p className="mt-3 text-sm leading-relaxed text-accent-foreground/90">
+                    {s.detail}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Recipient Schools */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+              <h3 className="font-display text-2xl font-bold text-accent">Recipient Schools</h3>
+            </motion.div>
+            <div className="space-y-5">
+              {recipientSchools.map((s, i) => (
+                <motion.div
+                  key={s.school}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="relative rounded-2xl p-6 border bg-primary-foreground/5 border-primary-foreground/15 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent/60"
+                >
+                  <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] font-bold text-accent">
+                    <s.icon className="h-3.5 w-3.5" />
+                    Receiving
+                  </div>
+                  <h4 className="mt-4 font-display text-xl font-bold text-primary-foreground">
+                    {s.school}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">
                     {s.detail}
                   </p>
                 </motion.div>
