@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback } from "react";
 import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
 import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
 import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
+import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg.asset.json";
 
 const navyItems = [
   {
