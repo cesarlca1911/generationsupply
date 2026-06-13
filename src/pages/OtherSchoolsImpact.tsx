@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback } from "react";
 import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
 import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
 import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
+import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg.asset.json";
 
 const navyItems = [
   {
@@ -141,17 +142,48 @@ const OtherSchoolsImpact = () => {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
           >
+            <button
+              onClick={() => openLightbox(brookfieldDropoff.url, "First Supply Drop-Off at Brookfield ES")}
+              className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500 w-full text-left cursor-pointer"
+            >
+              <figure className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={brookfieldDropoff.url}
+                  alt="Cesar Carlos delivering supplies to Brookfield Elementary"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
+                <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                    Direct Community Impact
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-bold">First Supply Drop-Off at Brookfield ES</h3>
+                  <p className="mt-2 text-sm text-primary-foreground/80">
+                    June 11, 2026 — Cesar Carlos, Founder of Generation Supply, personally delivering the first batch of donated supplies to Brookfield Elementary, sourced from Greenbriar East ES and Navy ES hubs.
+                  </p>
+                </figcaption>
+              </figure>
+            </button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.12 }}
+          >
             <div className="group block relative overflow-hidden rounded-2xl border-2 border-dashed border-accent/40 bg-accent/5 shadow-card-soft transition-all duration-500 w-full">
               <figure className="relative aspect-[4/5] overflow-hidden flex flex-col items-center justify-center text-center p-6">
                 <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-6">
                   <Clock className="h-8 w-8" />
                 </div>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
-                  Coming Soon
+                  More Coming Soon
                 </div>
                 <h3 className="mt-2 font-display text-xl font-bold text-primary">Brookfield ES Distribution Hub</h3>
                 <p className="mt-2 text-sm text-muted-foreground max-w-xs">
-                  Supplies collected from Greenbriar East ES and Navy ES will be routed to Brookfield Elementary — a high-need Title I campus — as our next verified distribution hub.
+                  Ongoing supply routing from Greenbriar East ES and Navy ES will continue powering Brookfield Elementary — a high-need Title I campus — as our newest verified distribution hub.
                 </p>
               </figure>
             </div>
