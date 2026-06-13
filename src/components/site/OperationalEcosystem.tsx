@@ -10,7 +10,7 @@ const phases = [
     body: "Simultaneous, campus-wide supply drives running across regional procurement hubs.",
     stats: [
       { label: "Greenbriar East Elementary", detail: "Launched April 1, 2026 · $966.20 raised" },
-      { label: "Navy Elementary School", detail: "Launched June 1, 2026 · $158.14 raised" },
+      { label: "Navy Elementary School", detail: "Launched June 1, 2026 · $292.34 raised" },
     ],
   },
   {

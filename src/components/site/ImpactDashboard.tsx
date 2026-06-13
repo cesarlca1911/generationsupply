@@ -30,8 +30,8 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 1388.73,
-    label: "Total Monetary Value Raised",
+    value: 1522.93,
+    label: "Total Monetary Value of Supplies Raised",
     sub: "Aggregate value of premium supply assets across donation hubs",
   },
   {
@@ -269,8 +269,8 @@ export const ImpactDashboard = () => {
 
           <div className="relative mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-primary/10 pt-5">
             <p className="text-xs text-slate">
-              <span className="font-semibold uppercase tracking-[0.14em] text-primary">Last Audit:</span>{" "}
-              {activeHub === "greenbriar" ? "May 21, 2026" : "June 3, 2026"}
+            <span className="font-semibold uppercase tracking-[0.14em] text-primary">Last Audit:</span>{" "}
+              {activeHub === "greenbriar" ? "May 21, 2026" : "June 10, 2026"}
             </p>
             <p className="text-[11px] text-slate/70 italic">
               Synced with internal logistics spreadsheet · Updated by hub coordinators
