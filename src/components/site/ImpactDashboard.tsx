@@ -170,7 +170,7 @@ export const ImpactDashboard = () => {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
