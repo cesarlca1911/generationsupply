@@ -45,7 +45,7 @@ const metrics: Metric[] = [
     icon: DollarSign,
     prefix: "$",
     value: 1702.93,
-    label: "Total Funds Raised",
+    label: "Total Monetary Value",
     sub: "Combined value of all monetary funds and supply assets raised",
   },
   {
