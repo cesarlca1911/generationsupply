@@ -35,6 +35,20 @@ const metrics: Metric[] = [
     sub: "Aggregate value of premium supply assets across donation hubs",
   },
   {
+    icon: DollarSign,
+    prefix: "$",
+    value: 180,
+    label: "Total Funds Raised in Events/Fundraisers",
+    sub: "Community-driven financial contributions from events and campaigns",
+  },
+  {
+    icon: DollarSign,
+    prefix: "$",
+    value: 1702.93,
+    label: "Total Funds Raised",
+    sub: "Combined value of all monetary funds and supply assets raised",
+  },
+  {
     icon: Users,
     value: 780,
     label: "Underserved Students Supported",
@@ -156,7 +170,7 @@ export const ImpactDashboard = () => {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
