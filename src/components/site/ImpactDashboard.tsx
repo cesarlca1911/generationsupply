@@ -35,6 +35,20 @@ const metrics: Metric[] = [
     sub: "Aggregate value of premium supply assets across donation hubs",
   },
   {
+    icon: DollarSign,
+    prefix: "$",
+    value: 180,
+    label: "Total Funds Raised in Events/Fundraisers",
+    sub: "Community-driven financial contributions from events and campaigns",
+  },
+  {
+    icon: DollarSign,
+    prefix: "$",
+    value: 1702.93,
+    label: "Total Funds Raised",
+    sub: "Combined value of all monetary funds and supply assets raised",
+  },
+  {
     icon: Users,
     value: 780,
     label: "Underserved Students Supported",
