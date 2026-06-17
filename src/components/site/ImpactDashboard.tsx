@@ -30,7 +30,7 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 1522.93,
+    value: 1374.54,
     label: "Total Monetary Value of Supplies Raised",
     sub: "Aggregate value of premium supply assets across donation hubs",
   },
@@ -44,13 +44,13 @@ const metrics: Metric[] = [
   {
     icon: DollarSign,
     prefix: "$",
-    value: 1702.93,
+    value: 1554.54,
     label: "Total Monetary Value",
     sub: "Combined value of all monetary funds and supply assets raised",
   },
   {
     icon: Users,
-    value: 780,
+    value: 800,
     label: "Underserved Students Supported",
     sub: "Target demographic receiving optimized material distribution",
   },
