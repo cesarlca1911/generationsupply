@@ -50,6 +50,13 @@ const metrics: Metric[] = [
   },
   {
     icon: Users,
+    value: 1800,
+    suffix: "+",
+    label: "Students Reached Through Community Outreach Marketing",
+    sub: "Total student engagement via promotional campaigns and community events",
+  },
+  {
+    icon: Users,
     value: 800,
     label: "Underserved Students Supported",
     sub: "Target demographic receiving optimized material distribution",
