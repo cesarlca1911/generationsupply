@@ -37,6 +37,29 @@ export function TubelightNavbar({ items, className, activeTab: externalActiveTab
     }
   }, [externalActiveTab])
 
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      const currentIndex = items.findIndex(item => item.name === activeTab)
+      let newIndex = currentIndex
+
+      if (e.key === "ArrowRight") {
+        newIndex = (currentIndex + 1) % items.length
+      } else if (e.key === "ArrowLeft") {
+        newIndex = (currentIndex - 1 + items.length) % items.length
+      } else {
+        return
+      }
+
+      const newTab = items[newIndex]
+      setActiveTab(newTab.name)
+      window.history.pushState(null, "", newTab.url)
+      onTabChange?.(newTab.name)
+    }
+
+    window.addEventListener("keydown", handleKeyPress)
+    return () => window.removeEventListener("keydown", handleKeyPress)
+  }, [activeTab, items, onTabChange])
+
   const handleTabChange = (tabName: string) => {
     setActiveTab(tabName)
     onTabChange?.(tabName)
