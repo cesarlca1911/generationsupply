@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -20,6 +20,7 @@ interface NavBarProps {
 export function TubelightNavbar({ items, className, activeTab: externalActiveTab, onTabChange }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(externalActiveTab || items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,13 +53,13 @@ export function TubelightNavbar({ items, className, activeTab: externalActiveTab
 
       const newTab = items[newIndex]
       setActiveTab(newTab.name)
-      window.history.pushState(null, "", newTab.url)
+      navigate(newTab.url)
       onTabChange?.(newTab.name)
     }
 
     window.addEventListener("keydown", handleKeyPress)
     return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [activeTab, items, onTabChange])
+  }, [activeTab, items, onTabChange, navigate])
 
   const handleTabChange = (tabName: string) => {
     setActiveTab(tabName)
