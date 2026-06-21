@@ -104,6 +104,15 @@ export const Navbar = () => {
                   activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
                 />
               </div>
+
+              {/* Mobile nav with tubelight effect - compact version */}
+              <div className="lg:hidden">
+                <TubelightNavbar
+                  items={navItems}
+                  activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
+                  className="bg-background/10 py-0.5 px-0.5"
+                />
+              </div>
             </div>
 
             {/* Desktop CTA */}

@@ -33,7 +33,7 @@ function AnimatedHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex justify-center"
           >
-            <div className="h-48 w-48 md:h-56 md:w-56 rounded-full overflow-hidden shadow-2xl">
+            <div className="h-48 w-48 md:h-56 md:w-56 rounded-full overflow-hidden shadow-2xl brightness-125">
               <img
                 src={logo}
                 alt="Generation Supply logo"
