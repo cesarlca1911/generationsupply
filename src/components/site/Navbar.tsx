@@ -47,7 +47,7 @@ export const Navbar = () => {
       <nav
         data-state={menuOpen ? "active" : undefined}
         className={cn(
-          "group fixed top-0 inset-x-0 z-50 border-b transition-colors duration-300 overflow-visible pt-8",
+          "group fixed top-0 inset-x-0 z-50 border-b transition-colors duration-300 overflow-visible pt-2",
           scrolled || pathname !== "/"
             ? "bg-background/80 backdrop-blur-3xl border-border shadow-card-soft"
             : "bg-transparent border-transparent"
