@@ -43,7 +43,7 @@ export const Navbar = () => {
   }, [pathname]);
 
   return (
-    <header>
+    <header className="mt-96 md:mt-0">
       <nav
         data-state={menuOpen ? "active" : undefined}
         className={cn(
