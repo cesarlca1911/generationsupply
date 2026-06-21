@@ -120,7 +120,7 @@ export const ImpactDashboard = () => {
           transition={{ duration: 0.7 }}
           className="max-w-3xl"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-success">Live Impact Dashboard</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Live Impact Dashboard</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-primary text-balance">
             The Numbers Behind the Mission.
           </h2>

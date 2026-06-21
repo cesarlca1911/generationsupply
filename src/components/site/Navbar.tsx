@@ -54,66 +54,51 @@ export const Navbar = () => {
         )}
       >
         <div className="container transition-all duration-300">
-          <div className="relative flex flex-wrap items-center justify-between gap-6 h-16 md:h-20 lg:gap-0">
-            {/* Brand */}
-            <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-              <Link to="/" aria-label="home" className="flex items-center gap-3">
-                <img
-                  src={logo}
-                  alt="Generation Supply logo"
-                  className="h-10 w-10 md:h-12 md:w-12 object-contain"
-                />
-                <div className="leading-tight">
-                  <div className="font-display font-black text-base md:text-lg text-primary">
-                    Generation Supply
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                    Empowering Young Minds
-                  </div>
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 lg:h-20">
+            {/* Brand - visible on all screens */}
+            <Link to="/" aria-label="home" className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Generation Supply logo"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain"
+              />
+              <div className="leading-tight">
+                <div className="font-display font-black text-base md:text-lg text-primary">
+                  Generation Supply
                 </div>
-              </Link>
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                  Empowering Young Minds
+                </div>
+              </div>
+            </Link>
 
-              {/* Mobile hamburger */}
+            {/* Desktop nav with tubelight effect */}
+            <div className="hidden lg:block">
+              <TubelightNavbar
+                items={navItems}
+                activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
+              />
+            </div>
+
+            {/* Mobile nav with tubelight effect - full width on mobile */}
+            <div className="lg:hidden w-full flex justify-center py-2">
+              <TubelightNavbar
+                items={navItems}
+                activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
+                className="bg-background/10 py-0.5 px-0.5"
+              />
+            </div>
+
+            {/* Mobile hamburger - shown when menu closed */}
+            {!menuOpen && (
               <button
                 onClick={() => setMenuOpen((v) => !v)}
-                aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden text-primary"
+                aria-label="Open Menu"
+                className="absolute right-4 top-4 z-20 cursor-pointer p-2.5 lg:hidden text-primary"
               >
-                <Menu
-                  className={cn(
-                    "m-auto size-6 duration-200",
-                    menuOpen
-                      ? "rotate-180 scale-0 opacity-0"
-                      : "rotate-0 scale-100 opacity-100"
-                  )}
-                />
-                <X
-                  className={cn(
-                    "absolute inset-0 m-auto size-6 duration-200",
-                    menuOpen
-                      ? "rotate-0 scale-100 opacity-100"
-                      : "-rotate-180 scale-0 opacity-0"
-                  )}
-                />
+                <Menu className="size-6" />
               </button>
-
-              {/* Desktop nav with tubelight effect */}
-              <div className="hidden lg:block">
-                <TubelightNavbar
-                  items={navItems}
-                  activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
-                />
-              </div>
-
-              {/* Mobile nav with tubelight effect - compact version */}
-              <div className="lg:hidden">
-                <TubelightNavbar
-                  items={navItems}
-                  activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
-                  className="bg-background/10 py-0.5 px-0.5"
-                />
-              </div>
-            </div>
+            )}
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
