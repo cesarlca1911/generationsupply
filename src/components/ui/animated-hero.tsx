@@ -26,7 +26,7 @@ function AnimatedHero() {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <div className="flex gap-3 py-4 lg:py-8 items-center justify-center flex-col">
+        <div className="flex gap-2 py-2 lg:py-4 items-center justify-center flex-col">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

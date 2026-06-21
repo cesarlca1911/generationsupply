@@ -43,11 +43,11 @@ export const Navbar = () => {
   }, [pathname]);
 
   return (
-    <header className="mt-96 md:mt-0">
+    <header>
       <nav
         data-state={menuOpen ? "active" : undefined}
         className={cn(
-          "group sticky top-0 inset-x-0 z-50 border-b transition-colors duration-300 overflow-visible pt-8",
+          "group fixed top-0 inset-x-0 z-50 border-b transition-colors duration-300 overflow-visible pt-8",
           scrolled || pathname !== "/"
             ? "bg-background/80 backdrop-blur-3xl border-border shadow-card-soft"
             : "bg-transparent border-transparent"
