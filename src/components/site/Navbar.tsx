@@ -54,76 +54,68 @@ export const Navbar = () => {
         )}
       >
         <div className="container transition-all duration-300 overflow-visible">
-          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-0 lg:h-20 overflow-visible">
-            {/* Brand - visible on all screens */}
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex items-center justify-between gap-8 h-20 overflow-visible">
+            {/* Brand */}
             <Link to="/" aria-label="home" className="flex items-center gap-3">
               <img
                 src={logo}
                 alt="Generation Supply logo"
-                className="h-10 w-10 md:h-12 md:w-12 object-contain"
+                className="h-12 w-12 object-contain"
               />
               <div className="leading-tight">
-                <div className="font-display font-black text-base md:text-lg text-primary">
+                <div className="font-display font-black text-lg text-primary">
                   Generation Supply
                 </div>
-                <div className="text-[10px] md:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                <div className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Empowering Young Minds
                 </div>
               </div>
             </Link>
 
             {/* Desktop nav with tubelight effect */}
-            <div className="hidden lg:block overflow-visible">
+            <div className="flex-1 flex justify-center overflow-visible">
               <TubelightNavbar
                 items={navItems}
                 activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
               />
             </div>
 
-            {/* Mobile nav with tubelight effect - full width on mobile */}
-            <div className="lg:hidden w-full flex justify-center py-2 overflow-visible">
+            {/* Desktop CTA */}
+            <div className="flex items-center gap-3">
+              <Button asChild variant="hero" size="sm">
+                <a href="/#contact">Get Involved</a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden flex flex-col gap-2 py-3 overflow-visible">
+            {/* Brand */}
+            <Link to="/" aria-label="home" className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Generation Supply logo"
+                className="h-10 w-10 object-contain"
+              />
+              <div className="leading-tight">
+                <div className="font-display font-black text-base text-primary">
+                  Generation Supply
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-accent font-semibold">
+                  Empowering Young Minds
+                </div>
+              </div>
+            </Link>
+
+            {/* Mobile nav with tubelight effect */}
+            <div className="w-full flex justify-center py-1 overflow-visible">
               <TubelightNavbar
                 items={navItems}
                 activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
                 className="bg-background/10 py-0.5 px-0.5"
               />
             </div>
-
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Button asChild variant="hero" size="sm">
-                <a href="/#contact">Get Involved</a>
-              </Button>
-            </div>
-
-            {/* Mobile dropdown */}
-            {menuOpen && (
-              <div className="w-full lg:hidden bg-background border-t border-border rounded-b-2xl shadow-2xl px-4 pb-6 pt-4">
-                <ul className="space-y-1 mb-4">
-                  {links.map((l) => (
-                    <li key={l.to}>
-                      <NavLink
-                        to={l.to}
-                        end={l.to === "/"}
-                        className={({ isActive }) =>
-                          cn(
-                            "block py-2 text-base font-medium rounded-lg px-3 transition-colors",
-                            isActive
-                              ? "text-primary bg-accent/10"
-                              : "text-foreground hover:text-primary hover:bg-accent/5"
-                          )
-                        }
-                      >
-                        {l.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild variant="hero" className="w-full">
-                  <a href="/#contact">Get Involved</a>
-                </Button>
-              </div>
-            )}
           </div>
         </div>
       </nav>
