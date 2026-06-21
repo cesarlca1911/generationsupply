@@ -24,7 +24,7 @@ function AnimatedHero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-20">
       <div className="container mx-auto">
         <div className="flex gap-2 py-2 lg:py-4 items-center justify-center flex-col">
           <motion.div
