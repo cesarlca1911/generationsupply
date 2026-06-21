@@ -47,7 +47,7 @@ function AnimatedHero() {
             </Button>
           </div>
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-4xl tracking-tighter text-center font-regular">
+            <h1 className="text-4xl md:text-6xl max-w-4xl tracking-tighter text-center font-regular">
               <span className="text-black">Supply drives that are</span>
               <span className="relative flex w-full justify-center text-center md:pb-4 md:pt-1">
                 &nbsp;
