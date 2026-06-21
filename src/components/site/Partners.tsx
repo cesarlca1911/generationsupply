@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
-import chickFilA from "@/assets/chick-fil-a.png.asset.json";
-import educateFairfax from "@/assets/educate-fairfax.png.asset.json";
+import chickfilaLogo from "@/assets/chickfila-logo.png";
+import educatefairfaxLogo from "@/assets/educatefairfax-logo.png";
 
 const partners = [
   {
     name: "Chick-fil-A Fair Lakes",
     tag: "Spirit Night Sponsor",
-    logo: chickFilA.url,
+    logo: chickfilaLogo,
     detail: "Spirit Night scheduled for September 17, 2026 — directly fueling our procurement hub operations.",
   },
   {
     name: "Educate Fairfax",
     tag: "Institutional Ally",
-    logo: educateFairfax.url,
+    logo: educatefairfaxLogo,
     detail: "Strategic alignment with Fairfax County's leading education nonprofit, amplifying our regional reach.",
   },
 ];
 
 export const Partners = () => {
   return (
-    <section id="partners" className="bg-secondary py-24 md:py-32">
+    <section id="partners" className="bg-transparent py-24 md:py-32">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

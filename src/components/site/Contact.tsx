@@ -76,13 +76,13 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-background py-24 md:py-32">
+    <section id="contact" className="bg-transparent py-24 md:py-32">
       <div className="container grid lg:grid-cols-12 gap-12 items-start">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Get in Touch</p>
@@ -94,8 +94,10 @@ export const Contact = () => {
           </p>
 
           <a
-            href="mailto:generationsupplyinquiries@gmail.com"
-            className="mt-8 inline-flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-card-soft hover:shadow-elegant transition-all"
+            href="https://mail.google.com/mail/?view=cm&to=generationsupplyinquiries@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-4 shadow-card-soft hover:shadow-elegant transition-all"
           >
             <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-gradient text-accent-foreground">
               <Mail className="h-5 w-5" />
@@ -109,11 +111,11 @@ export const Contact = () => {
 
         <motion.form
           onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="lg:col-span-7 rounded-3xl bg-card border border-border p-8 md:p-10 shadow-elegant"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-7 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 shadow-elegant"
         >
           {done ? (
             <div className="text-center py-12">

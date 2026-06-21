@@ -38,7 +38,7 @@ const team = [
 
 export const Leadership = () => {
   return (
-    <section id="leadership" className="relative bg-primary text-primary-foreground py-24 md:py-32 overflow-hidden grain border-t border-primary-foreground/10">
+    <section id="leadership" className="relative bg-transparent text-foreground py-24 md:py-32 overflow-hidden grain border-t border-border">
       <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="container relative">
@@ -50,10 +50,10 @@ export const Leadership = () => {
           className="max-w-3xl"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Executive Leadership</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-balance">
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-balance text-primary">
             Student-Led. Community-Driven.
           </h2>
-          <p className="mt-5 text-lg text-primary-foreground/75 text-balance">
+          <p className="mt-5 text-lg text-muted-foreground text-balance">
             Meet the executive team engineering the future of educational logistics.
           </p>
         </motion.div>

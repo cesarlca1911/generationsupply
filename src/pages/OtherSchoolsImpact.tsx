@@ -3,27 +3,27 @@ import { ArrowLeft, X, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useCallback } from "react";
-import navyDropbox from "@/assets/navy-dropbox.jpeg.asset.json";
-import navySupplies from "@/assets/navy-supplies.jpeg.asset.json";
-import navyNewsletter from "@/assets/navy-newsletter.png.asset.json";
-import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg.asset.json";
+import navyDropbox from "@/assets/navy-dropbox.jpeg";
+import navySupplies from "@/assets/navy-supplies.jpeg";
+import navyNewsletter from "@/assets/navy-newsletter.jpeg";
+import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg";
 
 const navyItems = [
   {
     slug: "navy-dropbox",
-    src: navyDropbox.url,
+    src: navyDropbox,
     title: "Navy ES Supply Drive Donation Box",
     caption: "Supply drive launched June 1st, 2026 — donation hub officially live in the Navy Elementary lobby.",
   },
   {
     slug: "navy-supplies",
-    src: navySupplies.url,
+    src: navySupplies,
     title: "Supplies Raised in 3 Days",
     caption: "$158.14 worth of premium academic supplies collected in just 3 days of the Navy ES supply drive.",
   },
   {
     slug: "navy-newsletter",
-    src: navyNewsletter.url,
+    src: navyNewsletter,
     title: "Featured in the Official Navy ES Newsletter",
     caption: "Generation Supply's initial feature in the official Navy Elementary school newsletter — formally introducing the donation drive to the entire Navy ES community.",
   },
@@ -106,7 +106,7 @@ const OtherSchoolsImpact = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">
                       Direct Community Impact
                     </div>
                     <h3 className="mt-2 font-display text-xl font-bold">{it.title}</h3>
@@ -143,19 +143,19 @@ const OtherSchoolsImpact = () => {
             transition={{ duration: 0.7 }}
           >
             <button
-              onClick={() => openLightbox(brookfieldDropoff.url, "First Supply Drop-Off at Brookfield ES")}
+              onClick={() => openLightbox(brookfieldDropoff, "First Supply Drop-Off at Brookfield ES")}
               className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500 w-full text-left cursor-pointer"
             >
               <figure className="relative aspect-[4/5] overflow-hidden">
                 <img
-                  src={brookfieldDropoff.url}
+                  src={brookfieldDropoff}
                   alt="Cesar Carlos delivering supplies to Brookfield Elementary"
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">
                     Direct Community Impact
                   </div>
                   <h3 className="mt-2 font-display text-xl font-bold">First Supply Drop-Off at Brookfield ES</h3>

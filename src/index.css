@@ -2,61 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Generation Supply — Navy, Safety Orange, Crisp White
-   Professional, trustworthy, academic. All colors HSL.
+/* Generation Supply — Light Modern Theme
+   Clean, professional, accessible. All colors HSL.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 217 60% 12%;
+    /* Light background palette */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 217 60% 12%;
+    --card-foreground: 0 0% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 217 60% 12%;
+    --popover-foreground: 0 0% 12%;
 
-    /* Navy */
-    --primary: 217 71% 20%;
+    /* Primary = teal for modern professional look */
+    --primary: 174 73% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 71% 35%;
+    --primary-glow: 174 73% 55%;
 
-    /* Soft cream / paper */
-    --secondary: 38 50% 96%;
-    --secondary-foreground: 217 71% 20%;
+    /* Secondary = soft blue */
+    --secondary: 210 70% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 25% 95%;
-    --muted-foreground: 217 15% 40%;
+    /* Muted colors for light theme */
+    --muted: 0 0% 85%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Safety orange */
-    --accent: 19 95% 54%;
+    /* Accent = muted coral/purple mix for softer feel */
+    --accent: 260 70% 55%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 30 100% 60%;
+    --accent-glow: 260 70% 65%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Success greens & slate */
-    --success: 152 60% 32%;
+    /* Success = soft teal */
+    --success: 174 60% 50%;
     --success-foreground: 0 0% 100%;
-    --slate: 215 20% 38%;
+    --slate: 0 0% 45%;
 
-    --border: 217 25% 88%;
-    --input: 217 25% 90%;
-    --ring: 19 95% 54%;
+    --border: 0 0% 88%;
+    --input: 0 0% 92%;
+    --ring: 174 73% 45%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(217 71% 16%) 0%, hsl(217 71% 24%) 60%, hsl(217 71% 30%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(19 95% 54%), hsl(30 100% 60%));
-    --gradient-paper: linear-gradient(180deg, hsl(0 0% 100%), hsl(38 50% 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 95%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 73% 45%), hsl(210 70% 50%));
+    --gradient-paper: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 96%));
 
-    --shadow-elegant: 0 20px 60px -20px hsl(217 71% 20% / 0.25);
-    --shadow-accent: 0 12px 40px -12px hsl(19 95% 54% / 0.45);
-    --shadow-card: 0 4px 24px -8px hsl(217 71% 20% / 0.12);
+    --shadow-elegant: 0 20px 60px -20px rgba(0, 0, 0, 0.12);
+    --shadow-accent: 0 12px 40px -12px hsl(174 73% 45% / 0.25);
+    --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.08);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -108,4 +110,18 @@
     background-size: 4px 4px;
     pointer-events: none;
   }
+}
+
+/* Film-grain position shuffle — used by GrainOverlay component */
+@keyframes grain {
+  0%,  100% { transform: translate(0, 0); }
+  10%        { transform: translate(-5%, -10%); }
+  20%        { transform: translate(-15%, 5%); }
+  30%        { transform: translate(7%, -25%); }
+  40%        { transform: translate(-5%, 25%); }
+  50%        { transform: translate(-15%, 10%); }
+  60%        { transform: translate(15%, 0%); }
+  70%        { transform: translate(0%, 15%); }
+  80%        { transform: translate(3%, 35%); }
+  90%        { transform: translate(-10%, 10%); }
 }

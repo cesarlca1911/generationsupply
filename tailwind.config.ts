@@ -1,5 +1,18 @@
 import type { Config } from "tailwindcss";
 
+// Seeds every Tailwind color as a CSS custom property — e.g. var(--blue-500), var(--indigo-300).
+// Required by the aurora background which references these variables inside repeating-linear-gradient.
+function addVariablesForColors({ addBase, theme }: any) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette").default;
+  const colors = flattenColorPalette(theme("colors")) as Record<string, string>;
+  addBase({
+    ":root": Object.fromEntries(
+      Object.entries(colors).map(([k, v]) => [`--${k}`, v])
+    ),
+  });
+}
+
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
@@ -83,14 +96,19 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "aurora": {
+          from: { backgroundPosition: "50% 50%, 50% 50%" },
+          to:   { backgroundPosition: "350% 50%, 350% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
+        "aurora": "aurora 60s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
 } satisfies Config;

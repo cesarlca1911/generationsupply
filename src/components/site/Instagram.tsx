@@ -11,7 +11,7 @@ const tiles = [
 
 export const Instagram = () => {
   return (
-    <section id="instagram" className="bg-paper py-24 md:py-32">
+    <section id="instagram" className="bg-transparent py-24 md:py-32">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: copy + CTA */}
@@ -55,7 +55,7 @@ export const Instagram = () => {
 
             <div className="mt-10 flex items-center gap-6">
               <div>
-                <div className="font-display text-3xl font-black text-primary">50+</div>
+                <div className="font-display text-3xl font-black text-primary">60+</div>
                 <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-1">Followers</div>
               </div>
               <div className="h-10 w-px bg-border" aria-hidden />
@@ -83,11 +83,11 @@ export const Instagram = () => {
             className="group relative block"
             aria-label="Open Generation Supply Instagram profile"
           >
-            <div className="absolute -inset-3 rounded-[2rem] bg-accent-gradient opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" aria-hidden />
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-blue-500/20 to-violet-400/20 blur-2xl group-hover:opacity-60 transition-opacity" aria-hidden />
 
-            <div className="relative rounded-3xl bg-card border border-border shadow-elegant overflow-hidden">
+            <div className="relative rounded-3xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-elegant overflow-hidden">
               {/* Header bar mimicking IG */}
-              <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-accent-gradient inline-flex items-center justify-center shadow-accent-glow">
                     <InstagramIcon className="h-5 w-5 text-accent-foreground" />
@@ -107,15 +107,15 @@ export const Instagram = () => {
                 {tiles.map((t, i) => (
                   <div
                     key={t.label}
-                    className="relative aspect-square bg-secondary p-5 flex flex-col justify-between overflow-hidden"
+                    className="relative aspect-square bg-white/5 p-5 flex flex-col justify-between overflow-hidden"
                   >
                     <div
                       className="absolute inset-0 opacity-60"
                       style={{
                         background:
                           i % 2 === 0
-                            ? "radial-gradient(circle at 30% 20%, hsl(var(--accent) / 0.18), transparent 60%)"
-                            : "radial-gradient(circle at 70% 80%, hsl(var(--primary) / 0.15), transparent 60%)",
+                            ? "radial-gradient(circle at 30% 20%, rgb(99 102 241 / 0.18), transparent 60%)"
+                            : "radial-gradient(circle at 70% 80%, rgb(139 92 246 / 0.15), transparent 60%)",
                       }}
                       aria-hidden
                     />
@@ -135,7 +135,7 @@ export const Instagram = () => {
               </div>
 
               {/* Footer CTA */}
-              <div className="px-5 py-4 border-t border-border flex items-center justify-between bg-card">
+              <div className="px-5 py-4 border-t border-white/10 flex items-center justify-between bg-black/20">
                 <span className="text-sm text-muted-foreground">Tap to view the full feed</span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-accent transition-colors">
                   Open Instagram

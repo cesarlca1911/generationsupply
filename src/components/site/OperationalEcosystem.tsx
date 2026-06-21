@@ -9,8 +9,8 @@ const phases = [
     subtitle: "Collection",
     body: "Simultaneous, campus-wide supply drives running across regional procurement hubs.",
     stats: [
-      { label: "Greenbriar East Elementary", detail: "Launched April 1, 2026 · $966.20 raised" },
-      { label: "Navy Elementary School", detail: "Launched June 1, 2026 · $292.34 raised" },
+      { label: "Greenbriar East Elementary", detail: "Launched April 15, 2026 · $966.20 raised" },
+      { label: "Navy Elementary School", detail: "Launched June 1, 2026 · $610.34 raised" },
     ],
   },
   {
@@ -39,23 +39,23 @@ const phases = [
 
 export const OperationalEcosystem = () => {
   return (
-    <section id="ecosystem" className="relative bg-background py-24 md:py-32 overflow-hidden">
+    <section id="ecosystem" className="relative bg-transparent py-24 md:py-32 overflow-hidden">
       <div className="absolute -top-32 right-0 h-[26rem] w-[26rem] rounded-full bg-accent/5 blur-3xl" aria-hidden />
       <div className="absolute bottom-0 -left-32 h-[22rem] w-[22rem] rounded-full bg-success/10 blur-3xl" aria-hidden />
 
       <div className="container relative">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Hub-and-Spoke Model</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-black text-primary text-balance">
             Our Operational Ecosystem.
           </h2>
-          <p className="mt-5 text-lg text-slate text-balance">
+          <p className="mt-5 text-lg text-muted-foreground text-balance">
             A three-phase logistics pipeline engineered to move premium academic assets from community collection points to the students who need them most.
           </p>
         </motion.div>
@@ -66,10 +66,10 @@ export const OperationalEcosystem = () => {
             return (
               <motion.div
                 key={p.tag}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative rounded-2xl border border-border bg-card p-8 shadow-card-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-elegant hover:border-accent/40"
               >
                 {/* Connector arrow on desktop */}

@@ -70,13 +70,13 @@ export const Gallery = () => {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
-                  <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">
                       Direct Community Impact
                     </div>
                     <h3 className="mt-2 font-display text-xl font-bold">{it.title}</h3>
-                    <p className="mt-2 text-sm text-primary-foreground/80">{it.caption}</p>
+                    <p className="mt-2 text-sm text-white/80">{it.caption}</p>
                   </figcaption>
                 </figure>
               </Link>
@@ -91,11 +91,9 @@ export const Gallery = () => {
           transition={{ duration: 0.6 }}
           className="mt-12 flex justify-center"
         >
-          <Button asChild variant="hero" size="lg">
-            <Link to="/impact/other-schools">
-              See Our Impact in Other Schools <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
+          <Link to="/impact/other-schools" className="inline-flex items-center gap-2 rounded-xl bg-white text-black hover:bg-neutral-200 px-6 py-3 font-semibold transition-all duration-300 shadow-elegant hover:shadow-elegant">
+            See Our Impact in Other Schools <ArrowRight className="h-4 w-4" />
+          </Link>
         </motion.div>
       </div>
     </section>

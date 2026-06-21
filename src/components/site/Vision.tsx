@@ -24,13 +24,13 @@ const steps = [
 
 export const Vision = () => {
   return (
-    <section id="vision" className="bg-paper py-24 md:py-32">
+    <section id="vision" className="bg-transparent py-24 md:py-32">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Our Vision</p>
@@ -46,15 +46,15 @@ export const Vision = () => {
           {steps.map((s, i) => (
             <motion.div
               key={s.number}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="group relative rounded-2xl bg-card border border-border p-8 shadow-card-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-1 overflow-hidden"
             >
               <span
                 aria-hidden
-                className="absolute -top-4 -right-2 font-display text-[7rem] leading-none font-black select-none text-primary"
+                className="absolute -top-4 -right-2 font-display text-[7rem] leading-none font-black select-none text-white/5"
               >
                 {s.number}
               </span>
