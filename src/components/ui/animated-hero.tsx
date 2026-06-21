@@ -26,14 +26,14 @@ function AnimatedHero() {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-8 lg:py-16 items-center justify-center flex-col">
+        <div className="flex gap-3 py-4 lg:py-8 items-center justify-center flex-col">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex justify-center"
           >
-            <div className="h-48 w-48 md:h-56 md:w-56 rounded-full overflow-hidden shadow-2xl brightness-125">
+            <div className="h-32 w-32 md:h-40 md:w-40 rounded-full overflow-hidden shadow-2xl brightness-125">
               <img
                 src={logo}
                 alt="Generation Supply logo"
