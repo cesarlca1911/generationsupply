@@ -45,7 +45,7 @@ export function TubelightNavbar({ items, className, activeTab: externalActiveTab
   return (
     <div
       className={cn(
-        "flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg",
+        "flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg overflow-visible",
         className,
       )}
     >
@@ -71,7 +71,7 @@ export function TubelightNavbar({ items, className, activeTab: externalActiveTab
             {isActive && (
               <motion.div
                 layoutId="tubelight"
-                className="absolute inset-0 w-full rounded-full -z-10"
+                className="absolute inset-0 w-full rounded-full -z-10 overflow-visible"
                 initial={false}
                 transition={{
                   type: "spring",
@@ -79,11 +79,11 @@ export function TubelightNavbar({ items, className, activeTab: externalActiveTab
                   damping: 30,
                 }}
               >
-                {/* Tubelight glow effect */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-primary rounded-t-full shadow-lg shadow-primary/60">
-                  <div className="absolute w-16 h-8 bg-primary/30 rounded-full blur-lg -top-3 -left-3" />
-                  <div className="absolute w-12 h-6 bg-primary/25 rounded-full blur-md -top-2 -left-1" />
-                  <div className="absolute w-8 h-5 bg-primary/20 rounded-full blur-sm top-0 left-1" />
+                {/* Tubelight glow effect - responsive sizing */}
+                <div className="absolute -top-2 md:-top-3 left-1/2 -translate-x-1/2 w-8 md:w-10 h-1 md:h-1.5 bg-primary rounded-t-full shadow-lg shadow-primary/60">
+                  <div className="absolute w-12 md:w-16 h-6 md:h-8 bg-primary/30 rounded-full blur-lg -top-2 md:-top-3 -left-2 md:-left-3" />
+                  <div className="absolute w-10 md:w-12 h-5 md:h-6 bg-primary/25 rounded-full blur-md -top-1 md:-top-2 -left-0.5 md:-left-1" />
+                  <div className="absolute w-6 md:w-8 h-4 md:h-5 bg-primary/20 rounded-full blur-sm top-0 left-0.5 md:left-1" />
                 </div>
                 {/* Background glow */}
                 <div className="absolute inset-0 bg-primary/5 rounded-full" />
