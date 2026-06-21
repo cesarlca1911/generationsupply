@@ -53,8 +53,8 @@ export const Navbar = () => {
             : "bg-transparent border-transparent"
         )}
       >
-        <div className="container transition-all duration-300">
-          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-0 lg:h-20">
+        <div className="container transition-all duration-300 overflow-visible">
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-0 lg:h-20 overflow-visible">
             {/* Brand - visible on all screens */}
             <Link to="/" aria-label="home" className="flex items-center gap-3">
               <img
@@ -73,7 +73,7 @@ export const Navbar = () => {
             </Link>
 
             {/* Desktop nav with tubelight effect */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:block overflow-visible">
               <TubelightNavbar
                 items={navItems}
                 activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
@@ -81,24 +81,13 @@ export const Navbar = () => {
             </div>
 
             {/* Mobile nav with tubelight effect - full width on mobile */}
-            <div className="lg:hidden w-full flex justify-center py-2">
+            <div className="lg:hidden w-full flex justify-center py-2 overflow-visible">
               <TubelightNavbar
                 items={navItems}
                 activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
                 className="bg-background/10 py-0.5 px-0.5"
               />
             </div>
-
-            {/* Mobile hamburger - shown when menu closed */}
-            {!menuOpen && (
-              <button
-                onClick={() => setMenuOpen((v) => !v)}
-                aria-label="Open Menu"
-                className="absolute right-4 top-4 z-20 cursor-pointer p-2.5 lg:hidden text-primary"
-              >
-                <Menu className="size-6" />
-              </button>
-            )}
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
