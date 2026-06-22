@@ -90,33 +90,73 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile Layout */}
-          <div className="lg:hidden flex items-center justify-between gap-4 h-16 py-2">
+          <div className="lg:hidden flex items-center justify-between py-3">
             {/* Brand */}
-            <Link to="/" aria-label="home" className="flex items-center gap-2 min-w-0">
+            <Link to="/" aria-label="home" className="flex items-center gap-3">
               <img
                 src={logo}
                 alt="Generation Supply logo"
-                className="h-8 w-8 object-contain flex-shrink-0"
+                className="h-10 w-10 object-contain"
               />
-              <div className="leading-tight min-w-0">
-                <div className="font-display font-black text-sm text-primary truncate">
+              <div className="leading-tight">
+                <div className="font-display font-black text-base text-primary">
                   Generation Supply
                 </div>
-                <div className="text-[8px] uppercase tracking-[0.18em] text-accent font-semibold">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-accent font-semibold">
                   Empowering Young Minds
                 </div>
               </div>
             </Link>
 
-            {/* Mobile nav with tubelight effect - compact */}
-            <div className="flex-1 flex justify-end overflow-visible">
-              <TubelightNavbar
-                items={navItems}
-                activeTab={navItems.find(item => item.url === pathname)?.name || "Home"}
-                className="bg-background/10 py-0.5 px-0.5 scale-75"
+            {/* Mobile hamburger menu */}
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuOpen ? "Close Menu" : "Open Menu"}
+              className="relative z-20 cursor-pointer p-2.5 text-primary"
+            >
+              <Menu
+                className={cn(
+                  "size-6 duration-200",
+                  menuOpen ? "rotate-180 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
+                )}
               />
-            </div>
+              <X
+                className={cn(
+                  "absolute inset-0 m-auto size-6 duration-200",
+                  menuOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-180 scale-0 opacity-0"
+                )}
+              />
+            </button>
           </div>
+
+          {/* Mobile dropdown menu */}
+          {menuOpen && (
+            <div className="w-full lg:hidden bg-background border-t border-border rounded-b-2xl shadow-2xl px-4 pb-6 pt-4">
+              <ul className="space-y-1 mb-4">
+                {links.map((l) => (
+                  <li key={l.to}>
+                    <NavLink
+                      to={l.to}
+                      end={l.to === "/"}
+                      className={({ isActive }) =>
+                        cn(
+                          "block py-2 text-base font-medium rounded-lg px-3 transition-colors",
+                          isActive
+                            ? "text-primary bg-accent/10"
+                            : "text-foreground hover:text-primary hover:bg-accent/5"
+                        )
+                      }
+                    >
+                      {l.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild variant="hero" className="w-full">
+                <a href="/#contact">Get Involved</a>
+              </Button>
+            </div>
+          )}
         </div>
       </nav>
     </header>
