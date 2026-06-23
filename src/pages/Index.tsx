@@ -12,7 +12,6 @@ import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { GrainOverlay } from "@/components/ui/grain-overlay";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import ScrollAnimationWrapper from "@/components/ui/hero-scroll-animation";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -34,19 +33,17 @@ const Index = () => {
     >
       <GrainOverlay />
       <Navbar />
-      <ScrollAnimationWrapper>
-        <AnimatedHero />
-        <Mission />
-        <Gallery />
-        <ImpactDashboard />
-        <Vision />
-        <Roadmap />
-        <Leadership />
-        <Partners />
-        <Instagram />
-        <Contact />
-        <Footer />
-      </ScrollAnimationWrapper>
+      <AnimatedHero />
+      <Mission />
+      <Gallery />
+      <ImpactDashboard />
+      <Vision />
+      <Roadmap />
+      <Leadership />
+      <Partners />
+      <Instagram />
+      <Contact />
+      <Footer />
     </AuroraBackground>
   );
 };
