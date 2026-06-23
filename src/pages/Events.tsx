@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, ImagePlus, MapPin } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import fcpsSummerExtravaganza from "@/assets/fcps-summer-extravaganza.jpg";
 
 type EventItem = {
   slug: string;
@@ -11,6 +12,7 @@ type EventItem = {
   location?: string;
   description: string;
   photoSlots: number;
+  photos?: string[];
 };
 
 const events: EventItem[] = [
@@ -22,12 +24,13 @@ const events: EventItem[] = [
     description:
       "Our team volunteered at the FCPS Summer Extravaganza, supporting families across the county with academic resources and community outreach.",
     photoSlots: 6,
+    photos: [fcpsSummerExtravaganza],
   },
   {
     slug: "mosby-woods-supply-drive",
     name: "Mosby Woods Supply Drive",
     date: "June 14, 2026",
-    location: "Mosby Woods Elementary",
+    location: "Mosby Woods",
     description:
       "Launching a focused supply drive at Mosby Woods Elementary to expand our distribution network to another high-need Title I campus.",
     photoSlots: 6,
@@ -106,17 +109,30 @@ const Events = () => {
                     Photo Gallery
                   </p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    {Array.from({ length: ev.photoSlots }).map((_, idx) => (
-                      <div
-                        key={idx}
-                        className="group aspect-square rounded-xl border-2 border-dashed border-primary/20 bg-background/60 flex flex-col items-center justify-center text-slate/60 hover:border-accent/60 hover:text-accent transition-colors"
-                      >
-                        <ImagePlus className="h-6 w-6" />
-                        <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
-                          Add Photo
-                        </span>
-                      </div>
-                    ))}
+                    {ev.photos && ev.photos.length > 0
+                      ? ev.photos.map((photo, idx) => (
+                          <div
+                            key={idx}
+                            className="group aspect-square rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all"
+                          >
+                            <img
+                              src={photo}
+                              alt={`${ev.name} photo ${idx + 1}`}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))
+                      : Array.from({ length: ev.photoSlots }).map((_, idx) => (
+                          <div
+                            key={idx}
+                            className="group aspect-square rounded-xl border-2 border-dashed border-primary/20 bg-background/60 flex flex-col items-center justify-center text-slate/60 hover:border-accent/60 hover:text-accent transition-colors"
+                          >
+                            <ImagePlus className="h-6 w-6" />
+                            <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
+                              Add Photo
+                            </span>
+                          </div>
+                        ))}
                   </div>
                 </div>
               </motion.article>
