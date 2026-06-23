@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useCallback } from "react";
 import dropbox from "@/assets/gbe-dropbox.jpeg";
 import mailers from "@/assets/gbe-mailers.jpeg";
 import newsletter from "@/assets/gbe-newsletter.jpeg";
@@ -28,6 +29,12 @@ export const galleryItems = [
 ];
 
 export const Gallery = () => {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  const closeLightbox = useCallback(() => {
+    setActiveImage(null);
+  }, []);
+
   return (
     <section id="impact" className="bg-background py-24 md:py-32">
       <div className="container">
@@ -59,9 +66,9 @@ export const Gallery = () => {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.12 }}
             >
-              <Link
-                to={`/impact/${it.slug}`}
-                className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500"
+              <button
+                onClick={() => setActiveImage(it.src)}
+                className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500 w-full text-left cursor-pointer"
               >
                 <figure className="relative aspect-[4/5] overflow-hidden">
                   <img
@@ -70,7 +77,7 @@ export const Gallery = () => {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <div className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">
                       Direct Community Impact
@@ -79,7 +86,7 @@ export const Gallery = () => {
                     <p className="mt-2 text-sm text-white/80">{it.caption}</p>
                   </figcaption>
                 </figure>
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>
@@ -96,6 +103,37 @@ export const Gallery = () => {
           </Link>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeLightbox}
+          >
+            <button
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 z-50 text-white/80 hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              src={activeImage}
+              alt="Full screen image"
+              className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
