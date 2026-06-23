@@ -4,6 +4,7 @@ import { Calendar, ImagePlus, MapPin } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import fcpsSummerExtravaganza from "@/assets/summer-extravaganza-2026.jpeg";
+import mosbyWoodsFlyer from "@/assets/mosby-woods-supply-drive-flyer.jpg";
 
 type EventItem = {
   slug: string;
@@ -20,7 +21,7 @@ const events: EventItem[] = [
     slug: "fcps-summer-extravaganza",
     name: "Volunteering @ FCPS Summer Extravaganza",
     date: "June 6, 2026",
-    location: "Fairfax County Public Schools",
+    location: "Woodson High School",
     description:
       "Our team volunteered at the FCPS Summer Extravaganza, supporting families across the county with academic resources and community outreach.",
     photoSlots: 6,
@@ -32,8 +33,9 @@ const events: EventItem[] = [
     date: "June 14, 2026",
     location: "Mosby Woods",
     description:
-      "Launching a focused supply drive at Mosby Woods Elementary to expand our distribution network to another high-need Title I campus.",
+      "A neighborhood-wide supply drive fundraiser at Mosby Woods to collect unused school supplies for underserved FCPS students. Supplies will be redistributed for the 2026-27 school year.",
     photoSlots: 6,
+    photos: [mosbyWoodsFlyer],
   },
   {
     slug: "cfa-spirit-night",
