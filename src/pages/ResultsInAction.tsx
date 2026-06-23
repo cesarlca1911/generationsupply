@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Gallery } from "@/components/site/Gallery";
-import { OperationalEcosystem } from "@/components/site/OperationalEcosystem";
 
 const ResultsInAction = () => {
   useEffect(() => {
@@ -15,7 +14,6 @@ const ResultsInAction = () => {
       <Navbar />
       <div className="pt-20">
         <Gallery />
-        <OperationalEcosystem />
       </div>
       <Footer />
     </main>
