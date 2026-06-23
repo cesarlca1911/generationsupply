@@ -1,7 +1,7 @@
 'use client';
 
-import { useScroll, useTransform, motion, MotionValue } from 'motion/react';
-import React, { useRef, useEffect, useState, ReactNode } from 'react';
+import { useScroll, useTransform, motion } from 'motion/react';
+import React, { useRef, ReactNode } from 'react';
 
 interface ScrollAnimationWrapperProps {
   children: ReactNode;
@@ -9,38 +9,34 @@ interface ScrollAnimationWrapperProps {
 
 const ScrollAnimationWrapper: React.FC<ScrollAnimationWrapperProps> = ({ children }) => {
   const container = useRef<HTMLDivElement>(null);
-  const [scrollYProgress, setScrollYProgress] = useState(0);
-  const { scrollYProgress: progress } = useScroll({
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  // Scroll progress for the entire page
+  const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
   });
 
-  useEffect(() => {
-    const unsubscribe = progress.on('change', (v) => {
-      setScrollYProgress(v);
-    });
-    return () => unsubscribe();
-  }, [progress]);
+  // Hero section animations - scale down and fade as you scroll
+  const heroScale = useTransform(scrollYProgress, [0, 0.25], [1, 0.8]);
+  const heroY = useTransform(scrollYProgress, [0, 0.25], [0, -50]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.3]);
 
-  // Hero section scale and rotation
-  const heroScale = useTransform(progress, [0, 0.15], [1, 0.95]);
-  const heroRotate = useTransform(progress, [0, 0.15], [0, -2]);
-  const heroOpacity = useTransform(progress, [0.1, 0.2], [1, 0.95]);
-
-  // Content fade-in effect as you scroll
-  const contentOpacity = useTransform(progress, [0.1, 0.3], [0.8, 1]);
-  const contentY = useTransform(progress, [0.1, 0.3], [20, 0]);
+  // Content animations - fade in and slide up
+  const contentOpacity = useTransform(scrollYProgress, [0.15, 0.35], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.15, 0.35], [100, 0]);
 
   return (
     <div ref={container} className='relative bg-background'>
       {/* Hero Section */}
       <motion.section
+        ref={heroRef}
         style={{
           scale: heroScale,
-          rotate: heroRotate,
-          opacity: heroOpacity
+          y: heroY,
+          opacity: heroOpacity,
         }}
-        className='h-screen w-full bg-gradient-to-b from-[#f5f5f5] to-[#fafafa] flex flex-col items-center justify-center text-black relative overflow-hidden'
+        className='relative h-screen w-full bg-gradient-to-b from-[#f5f5f5] to-[#fafafa] flex flex-col items-center justify-center text-black overflow-hidden'
       >
         {/* Aurora effect background */}
         <div className='absolute inset-0 opacity-40'>
