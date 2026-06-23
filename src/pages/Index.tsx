@@ -12,6 +12,7 @@ import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { GrainOverlay } from "@/components/ui/grain-overlay";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import HeroScrollAnimation from "@/components/ui/hero-scroll-animation";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -33,6 +34,7 @@ const Index = () => {
     >
       <GrainOverlay />
       <Navbar />
+      <HeroScrollAnimation />
       <AnimatedHero />
       <Mission />
       <Gallery />
