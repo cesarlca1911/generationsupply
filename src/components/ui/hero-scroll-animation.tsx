@@ -40,7 +40,7 @@ const ScrollAnimationWrapper: React.FC<ScrollAnimationWrapperProps> = ({ childre
           rotate: heroRotate,
           opacity: heroOpacity
         }}
-        className='sticky top-0 h-screen w-full bg-gradient-to-b from-[#f5f5f5] to-[#fafafa] flex flex-col items-center justify-center text-black z-10 overflow-hidden'
+        className='h-screen w-full bg-gradient-to-b from-[#f5f5f5] to-[#fafafa] flex flex-col items-center justify-center text-black relative overflow-hidden'
       >
         {/* Aurora effect background */}
         <div className='absolute inset-0 opacity-40'>
