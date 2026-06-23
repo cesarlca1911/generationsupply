@@ -4,7 +4,7 @@ import { Calendar, ImagePlus, MapPin } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import fcpsSummerExtravaganza from "@/assets/summer-extravaganza-2026.jpeg";
-import mosbyWoodsFlyer from "@/assets/mosby-woods-supply-drive-flyer.jpg";
+import mosbyWoodsFlyer from "@/assets/mosby-woods-supply-drive-flyer.jpeg";
 
 type EventItem = {
   slug: string;
