@@ -55,7 +55,7 @@ export const Instagram = () => {
 
             <div className="mt-10 flex items-center gap-6">
               <div>
-                <div className="font-display text-3xl font-black text-primary">60+</div>
+                <div className="font-display text-3xl font-black text-primary">70+</div>
                 <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-1">Followers</div>
               </div>
               <div className="h-10 w-px bg-border" aria-hidden />
