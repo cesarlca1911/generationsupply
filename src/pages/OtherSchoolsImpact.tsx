@@ -7,7 +7,7 @@ import navyDropbox from "@/assets/navy-dropbox.jpeg";
 import navySupplies from "@/assets/navy-supplies.jpeg";
 import navyNewsletter from "@/assets/navy-newsletter.jpeg";
 import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg";
-import brookfieldPrincipal from "@/assets/brookfield-principal-donation.jpeg";
+import brookfieldPrincipal from "@/assets/brookfield es principal.png";
 
 const navyItems = [
   {
