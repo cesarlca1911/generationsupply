@@ -7,7 +7,6 @@ import navyDropbox from "@/assets/navy-dropbox.jpeg";
 import navySupplies from "@/assets/navy-supplies.jpeg";
 import navyNewsletter from "@/assets/navy-newsletter.jpeg";
 import brookfieldDropoff from "@/assets/brookfield-dropoff.jpeg";
-import brookfieldPrincipal from "@/assets/brookfield es principal.png";
 
 const navyItems = [
   {
@@ -174,29 +173,20 @@ const OtherSchoolsImpact = () => {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.12 }}
           >
-            <button
-              onClick={() => openLightbox(brookfieldPrincipal, "Brookfield ES School Supply Delivery Confirmation")}
-              className="group block relative overflow-hidden rounded-2xl bg-card border border-border shadow-card-soft hover:shadow-elegant transition-all duration-500 w-full text-left cursor-pointer"
-            >
-              <figure className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={brookfieldPrincipal}
-                  alt="Brookfield ES Principal Ms. Hassen with Generation Supply donation box"
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">
-                    Direct Community Impact
-                  </div>
-                  <h3 className="mt-2 font-display text-xl font-bold">Brookfield ES School Supply Delivery Confirmation</h3>
-                  <p className="mt-2 text-sm text-primary-foreground/80">
-                    Ms. Hassen, Brookfield Elementary Principal, confirms receipt and acceptance of Generation Supply's donation box. This marks our official partnership launch at Brookfield ES, establishing a sustainable supply distribution hub serving high-need students in our region.
-                  </p>
-                </figcaption>
+            <div className="group block relative overflow-hidden rounded-2xl border-2 border-dashed border-accent/40 bg-accent/5 shadow-card-soft transition-all duration-500 w-full">
+              <figure className="relative aspect-[4/5] overflow-hidden flex flex-col items-center justify-center text-center p-6">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-6">
+                  <Clock className="h-8 w-8" />
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  Coming Soon
+                </div>
+                <h3 className="mt-2 font-display text-xl font-bold text-primary">Brookfield ES School Supply Delivery</h3>
+                <p className="mt-2 text-sm text-muted-foreground max-w-xs">
+                  Principal Ms. Hassen confirms receipt of Generation Supply donation box, establishing our official partnership at Brookfield ES as a sustainable distribution hub.
+                </p>
               </figure>
-            </button>
+            </div>
           </motion.div>
         </div>
 
