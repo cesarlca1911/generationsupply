@@ -136,10 +136,18 @@ const Events = () => {
                             key={idx}
                             className="group aspect-square rounded-xl border-2 border-dashed border-primary/20 bg-background/60 flex flex-col items-center justify-center text-slate/60 hover:border-accent/60 hover:text-accent transition-colors"
                           >
-                            <ImagePlus className="h-6 w-6" />
-                            <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
-                              Add Photo
-                            </span>
+                            {ev.slug === "cfa-spirit-night" ? (
+                              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-black">
+                                Coming Soon
+                              </span>
+                            ) : (
+                              <>
+                                <ImagePlus className="h-6 w-6" />
+                                <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
+                                  Add Photo
+                                </span>
+                              </>
+                            )}
                           </div>
                         ))}
                   </div>
