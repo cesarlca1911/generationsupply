@@ -112,46 +112,48 @@ const Events = () => {
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8 bg-secondary/40">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate mb-4">
-                    Photo Gallery
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    {ev.photos && ev.photos.length > 0
-                      ? ev.photos.map((photo, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setActiveImage(photo)}
-                            className="group aspect-square rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all cursor-pointer"
-                          >
-                            <img
-                              src={photo}
-                              alt={`${ev.name} photo ${idx + 1}`}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </button>
-                        ))
-                      : Array.from({ length: ev.photoSlots }).map((_, idx) => (
-                          <div
-                            key={idx}
-                            className="group aspect-square rounded-xl border-2 border-dashed border-primary/20 bg-background/60 flex flex-col items-center justify-center text-slate/60 hover:border-accent/60 hover:text-accent transition-colors"
-                          >
-                            {ev.slug === "cfa-spirit-night" ? (
-                              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-black">
-                                Coming Soon
-                              </span>
-                            ) : (
-                              <>
-                                <ImagePlus className="h-6 w-6" />
-                                <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
-                                  Add Photo
-                                </span>
-                              </>
-                            )}
-                          </div>
-                        ))}
+                {ev.slug === "cfa-spirit-night" ? (
+                  <div className="p-6 md:p-8 bg-accent/20">
+                    <div className="flex items-center justify-center py-16 rounded-2xl bg-gradient-to-br from-accent to-purple-600">
+                      <span className="text-2xl md:text-3xl font-black uppercase tracking-[0.18em] text-black">
+                        Coming Soon
+                      </span>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="p-6 md:p-8 bg-secondary/40">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate mb-4">
+                      Photo Gallery
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                      {ev.photos && ev.photos.length > 0
+                        ? ev.photos.map((photo, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setActiveImage(photo)}
+                              className="group aspect-square rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            >
+                              <img
+                                src={photo}
+                                alt={`${ev.name} photo ${idx + 1}`}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </button>
+                          ))
+                        : Array.from({ length: ev.photoSlots }).map((_, idx) => (
+                            <div
+                              key={idx}
+                              className="group aspect-square rounded-xl border-2 border-dashed border-primary/20 bg-background/60 flex flex-col items-center justify-center text-slate/60 hover:border-accent/60 hover:text-accent transition-colors"
+                            >
+                              <ImagePlus className="h-6 w-6" />
+                              <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
+                                Add Photo
+                              </span>
+                            </div>
+                          ))}
+                    </div>
+                  </div>
+                )}
               </motion.article>
             ))}
           </div>
