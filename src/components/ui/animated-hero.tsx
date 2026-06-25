@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Heart, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ShaderBackground } from "@/components/ui/shader-background";
 import logo from "@/assets/generation-supply-logo.png";
 
 function AnimatedHero() {
@@ -25,14 +24,8 @@ function AnimatedHero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full pt-20 relative overflow-hidden min-h-screen">
-      {/* Shader Background */}
-      <div className="absolute inset-0 h-full">
-        <ShaderBackground color1="#f5f5f5" color2="#e8e8e8" />
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto relative z-10">
+    <div className="w-full pt-20">
+      <div className="container mx-auto">
         <div className="flex gap-2 py-2 lg:py-4 items-center justify-center flex-col">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
